@@ -1,14 +1,76 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Le Petit Café — Café • Brunch • Gourmandises</title><link rel="stylesheet" href="style.css"></head>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Petit Café — Café • Brunch • Gourmandises</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
 <body>
-<header class="header"><a class="logo" href="#">Le Petit Café</a><nav class="nav"><a href="#accueil">Accueil</a><a href="#services">Services</a><a href="#menu">Menu</a><a href="#infos">Nous trouver</a></nav><a class="btn btn-marron" href="#menu">Commander</a></header>
-<main id="accueil">
-<section class="hero reveal"><div><p class="label-majuscule">Café • Brunch • Gourmandises</p><h1 class="titre-hero">Le Petit<br>Café</h1><p class="hero-sous-titre">Un petit café cosy au coeur du Puy-en-Velay. Cafés de spécialité, douceurs maison et brunch le week-end.</p><div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap"><a class="btn btn-marron" href="#menu">Voir le menu</a><a class="btn btn-contour" href="#infos">Nous trouver</a></div></div><div class="hero-photo"><img class="photo-blob" src="images/facade.jpg" alt="Façade Le Petit Café"></div></section>
-<div class="bandeau"><span>Café • Specialty Lattes • Baked Goods • Thé • Douceurs • Iced Latte • Brunch • </span><span>Café • Specialty Lattes • Baked Goods • Thé • Douceurs • Iced Latte • Brunch • </span></div>
-<section class="section-blanche reveal"><p class="label-majuscule">Notre best-seller</p><h2 class="titre-fix">get your coffee fix.</h2><p class="texte-sobre">Iced latte, café crème, matcha — fait avec amour, tous les jours.</p><img class="produit-centre" src="images/iced-latte.jpg" alt="Iced latte"></section>
-<section class="section-services reveal" id="services"><p class="label-majuscule">Nos services</p><h2 class="titre-services">On vous sert quoi ?</h2><div class="services-grid"><div><img class="photo-ronde" src="images/facade.jpg" alt="Café"><div class="carte-marron"><h3>Cafés</h3><p>Espresso, allongé, noisette, café crème, cappuccino, latte macchiato.</p></div></div><div><img class="photo-ronde" src="images/menu.jpg" alt="Douceurs"><div class="carte-marron"><h3>Douceurs</h3><p>Croissant, pain au chocolat, cookie, tarte maison, cake, cinnamon roll.</p></div></div><div><img class="photo-ronde" src="images/iced-latte.jpg" alt="Boissons"><div class="carte-marron"><h3>Boissons</h3><p>Iced latte, iced matcha, chai tea latte, thé glacé, smoothie, jus d'orange.</p></div></div></div></section>
-<section class="section-menu reveal" id="menu"><p class="label-majuscule" style="text-align:center">Menu</p><h2 class="titre-services" style="text-align:center;font-size:clamp(40px,5vw,64px)">Le Menu</h2><div class="menu-grid"><div><h3>Cafés</h3><div class="ligne-menu"><span>Espresso</span><span class="pointilles"></span><span class="prix">1,50 €</span></div><div class="ligne-menu"><span>Allongé</span><span class="pointilles"></span><span class="prix">1,80 €</span></div><div class="ligne-menu"><span>Café crème</span><span class="pointilles"></span><span class="prix">2,20 €</span></div><div class="ligne-menu"><span>Cappuccino</span><span class="pointilles"></span><span class="prix">3,00 €</span></div></div><div><h3>Douceurs</h3><div class="ligne-menu"><span>Croissant</span><span class="pointilles"></span><span class="prix">1,50 €</span></div><div class="ligne-menu"><span>Pain au chocolat</span><span class="pointilles"></span><span class="prix">1,80 €</span></div><div class="ligne-menu"><span>Cookie</span><span class="pointilles"></span><span class="prix">2,00 €</span></div><div class="ligne-menu"><span>Cinnamon Roll</span><span class="pointilles"></span><span class="prix">3,50 €</span></div></div><div><h3>Boissons</h3><div class="ligne-menu"><span>Iced latte</span><span class="pointilles"></span><span class="prix">3,80 €</span></div><div class="ligne-menu"><span>Iced matcha</span><span class="pointilles"></span><span class="prix">3,80 €</span></div><div class="ligne-menu"><span>Smoothie</span><span class="pointilles"></span><span class="prix">3,95 €</span></div></div><div><h3>Thés</h3><div class="ligne-menu"><span>Thé noir</span><span class="pointilles"></span><span class="prix">2,50 €</span></div><div class="ligne-menu"><span>Thé vert</span><span class="pointilles"></span><span class="prix">2,50 €</span></div><div class="ligne-menu"><span>Thé aux fruits</span><span class="pointilles"></span><span class="prix">2,50 €</span></div></div></div></section>
-</main>
-<footer class="footer" id="infos"><span class="logo">Le Petit Café</span><p>12 rue des Rêves, Le Puy-en-Velay<br>06 38 23 15 90 • lepetitcafe • www.lepetitcafe.com</p></footer>
-<script src="script.js"></script>
-</body></html>
+  <header class="header">
+    <a class="logo" href="#">Le Petit Café</a>
+    <nav class="nav">
+      <a href="#accueil">Accueil</a><a href="#services">Services</a><a href="#menu">Menu</a><a href="#infos">Nous trouver</a>
+    </nav>
+    <a class="btn btn-marron" href="#menu">Commander</a>
+  </header>
+
+  <main id="accueil">
+    <!-- HERO -->
+    <section class="hero reveal">
+      <div>
+        <p class="label-majuscule">Café • Brunch • Gourmandises</p>
+        <h1 class="titre-hero">Le Petit<br>Café</h1>
+        <p class="hero-sous-titre">Un petit café cosy au coeur du Puy-en-Velay. Cafés de spécialité, douceurs maison et brunch le week-end.</p>
+        <div class="hero-boutons">
+          <a class="btn btn-marron" href="#menu">Voir le menu</a>
+          <a class="btn btn-contour" href="#infos">Nous trouver</a>
+        </div>
+      </div>
+      <div class="hero-photo"><img class="photo-blob" src="images/facade.jpg" alt="Façade Le Petit Café"></div>
+    </section>
+
+    <!-- BANDEAU -->
+    <div class="bandeau"><span>Café • Specialty Lattes • Baked Goods • Thé • Douceurs • Iced Latte • Brunch • </span><span>Café • Specialty Lattes • Baked Goods • Thé • Douceurs • Iced Latte • Brunch • </span></div>
+
+    <!-- FIX -->
+    <section class="section-blanche reveal">
+      <p class="label-majuscule">Notre best-seller</p>
+      <h2 class="titre-fix">get your coffee fix.</h2>
+      <p class="texte-sobre">Iced latte, café crème, matcha — fait avec amour, tous les jours.</p>
+      <img class="produit-centre" src="images/iced-latte.jpg" alt="Iced latte">
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section-services reveal" id="services">
+      <p class="label-majuscule">Nos services</p>
+      <h2 class="titre-services">On vous sert quoi ?</h2>
+      <div class="services-grid">
+        <div><img class="photo-ronde" src="images/facade.jpg" alt="Café"><div class="carte-marron"><h3>Cafés</h3><p>Espresso, allongé, noisette, café crème, cappuccino, latte macchiato.</p></div></div>
+        <div><img class="photo-ronde" src="images/menu.jpg" alt="Douceurs"><div class="carte-marron"><h3>Douceurs</h3><p>Croissant, pain au chocolat, cookie, tarte maison, cake, cinnamon roll.</p></div></div>
+        <div><img class="photo-ronde" src="images/iced-latte.jpg" alt="Boissons"><div class="carte-marron"><h3>Boissons</h3><p>Iced latte, iced matcha, chai tea latte, thé glacé, smoothie, jus d'orange.</p></div></div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="section-menu reveal" id="menu">
+      <p class="label-majuscule text-center">Menu</p>
+      <h2 class="titre-services text-center titre-menu">Le Menu</h2>
+      <div class="menu-grid">
+        <div><h3>Cafés</h3><div class="ligne-menu"><span>Espresso</span><span class="pointilles"></span><span class="prix">1,50 €</span></div><div class="ligne-menu"><span>Allongé</span><span class="pointilles"></span><span class="prix">1,80 €</span></div><div class="ligne-menu"><span>Café crème</span><span class="pointilles"></span><span class="prix">2,20 €</span></div><div class="ligne-menu"><span>Cappuccino</span><span class="pointilles"></span><span class="prix">3,00 €</span></div></div>
+        <div><h3>Douceurs</h3><div class="ligne-menu"><span>Croissant</span><span class="pointilles"></span><span class="prix">1,50 €</span></div><div class="ligne-menu"><span>Pain au chocolat</span><span class="pointilles"></span><span class="prix">1,80 €</span></div><div class="ligne-menu"><span>Cookie</span><span class="pointilles"></span><span class="prix">2,00 €</span></div><div class="ligne-menu"><span>Cinnamon Roll</span><span class="pointilles"></span><span class="prix">3,50 €</span></div></div>
+        <div><h3>Boissons</h3><div class="ligne-menu"><span>Iced latte</span><span class="pointilles"></span><span class="prix">3,80 €</span></div><div class="ligne-menu"><span>Iced matcha</span><span class="pointilles"></span><span class="prix">3,80 €</span></div><div class="ligne-menu"><span>Smoothie</span><span class="pointilles"></span><span class="prix">3,95 €</span></div></div>
+        <div><h3>Thés</h3><div class="ligne-menu"><span>Thé noir</span><span class="pointilles"></span><span class="prix">2,50 €</span></div><div class="ligne-menu"><span>Thé vert</span><span class="pointilles"></span><span class="prix">2,50 €</span></div><div class="ligne-menu"><span>Thé aux fruits</span><span class="pointilles"></span><span class="prix">2,50 €</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="infos">
+    <span class="logo">Le Petit Café</span>
+    <p>12 rue des Rêves, Le Puy-en-Velay<br>06 38 23 15 90 • lepetitcafe • www.lepetitcafe.com</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

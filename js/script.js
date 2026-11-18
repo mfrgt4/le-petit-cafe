@@ -11,6 +11,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }, { threshold: 0.15 });
   els.forEach(function (el) { obs.observe(el); });
-  // Filet de sécurité : tout afficher après 1,5s
   setTimeout(function () { els.forEach(function (el) { el.classList.add('visible'); }); }, 1500);
 });
