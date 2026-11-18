@@ -97,14 +97,14 @@
         transition: all 0.4s ease;
       }
 
-      /* Quand on quitte le hero : fond flouté */
+      /* Quand on quitte le hero : fond TRANSLUCIDE (sans flou) */
       header.scrolled {
-        background: rgba(253, 245, 247, 0.85) !important;
-        background-color: rgba(253, 245, 247, 0.85) !important;
-        backdrop-filter: blur(16px) !important;
-        -webkit-backdrop-filter: blur(16px) !important;
-        border-bottom: 1px solid rgba(244, 208, 218, 0.6) !important;
-        box-shadow: 0 8px 30px rgba(61, 43, 30, 0.08) !important;
+        background: rgba(253, 245, 247, 0.65) !important;
+        background-color: rgba(253, 245, 247, 0.65) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        border-bottom: 1px solid rgba(244, 208, 218, 0.5) !important;
+        box-shadow: 0 8px 30px rgba(61, 43, 30, 0.06) !important;
       }
 
       /* Liens du menu en pastilles roses */
@@ -222,7 +222,7 @@
 
   <body class="selection:bg-[#F4D0DA] selection:text-[#3D2B1E]">
     <!-- =====================================================================
-     1. HEADER FIXE (Glassmorphism épuré, typographie éditoriale)
+   1. HEADER FIXE (Glassmorphism épuré, typographie éditoriale)
 ====================================================================== -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div
