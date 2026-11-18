@@ -85,6 +85,41 @@
         letter-spacing: -0.01em;
       }
 
+      /* --- MENU TRANSPARENT PAR-DESSUS LE HERO --- */
+      .site-header,
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background: transparent !important;
+        background-color: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      /* Liens du menu en pastilles roses */
+      .nav-pill {
+        background: var(--boutons-600);
+        color: var(--blanc);
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 10px 24px;
+        border-radius: 999px;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+      }
+
+      .nav-pill:hover {
+        background: var(--blanc);
+        color: var(--boutons-600);
+      }
+
       .shadow-editorial {
         box-shadow:
           0 20px 45px -15px rgba(61, 43, 30, 0.1),
@@ -183,56 +218,25 @@
     <!-- =====================================================================
        1. HEADER FIXE (Glassmorphism épuré, typographie éditoriale)
   ====================================================================== -->
-    <header
-      id="navbar"
-      class="fixed top-0 left-0 right-0 z-50 bg-[#FDF5F7]/85 backdrop-blur-xl border-b border-[#6F4E37]/10 transition-all duration-300"
-    >
-      <div
-        class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 h-20 flex items-center justify-between"
-      >
-        <!-- Logo Le Petit Café -->
-        <a
-          href="#accueil"
-          class="flex items-center gap-3.5 group focus:outline-none"
-        >
-          <img
-            src="images/Logo-Site.png"
-            alt="Le Petit Café"
-            class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-          />
-        </a>
+        <header class="fixed top-0 left-0 right-0 z-50 bg-transparent">
+          <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 h-20 flex items-center justify-between">
+            
+            <!-- Ton logo -->
+            <a href="#accueil" class="flex items-center gap-3.5 group focus:outline-none">
+              <img src="images/Logo-Site.png" alt="Le Petit Café" class="h-12 w-auto object-contain" />
+            </a>
 
-        <!-- Navigation Desktop épurée -->
-        <nav
-          class="hidden lg:flex items-center gap-8"
-          aria-label="Navigation principale"
-        >
-          <a
-            href="#accueil"
-            class="text-sm font-medium text-[#6F4E37] hover:text-[#3D2B1E] transition-colors"
-            >Accueil</a
-          >
-          <a
-            href="#histoire"
-            class="text-sm font-medium text-[#6F4E37]/80 hover:text-[#6F4E37] transition-colors"
-            >Notre histoire</a
-          >
-          <a
-            href="#menu"
-            class="text-sm font-medium text-[#6F4E37]/80 hover:text-[#6F4E37] transition-colors"
-            >Menu</a
-          >
-          <a
-            href="#brunch"
-            class="text-sm font-medium text-[#6F4E37]/80 hover:text-[#6F4E37] transition-colors"
-            >Brunch</a
-          >
-          <a
-            href="#trouver"
-            class="text-sm font-medium text-[#6F4E37]/80 hover:text-[#6F4E37] transition-colors"
-            >Nous trouver</a
-          >
-        </nav>
+            <!-- Navigation en pastilles roses -->
+            <nav class="hidden lg:flex items-center gap-3" aria-label="Navigation principale">
+              <a href="#histoire" class="nav-pill">NOTRE HISTOIRE</a>
+              <a href="#boissons" class="nav-pill">NOS BOISSONS</a>
+              <a href="#menu" class="nav-pill">MENU</a>
+              <a href="#brunch" class="nav-pill">BRUNCH</a>
+              <a href="#trouver" class="nav-pill">NOUS TROUVER</a>
+            </nav>
+
+          </div>
+        </header>
 
         <!-- Bouton pilule marron + Burger Mobile -->
         <div class="flex items-center gap-3">
