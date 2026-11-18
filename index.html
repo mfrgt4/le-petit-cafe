@@ -2282,7 +2282,7 @@
       const header = document.querySelector("header");
       const hero = document.querySelector("#accueil section");
 
-      // Dès qu'on a scrollé de la hauteur du hero - 80px, on floute
+      // Dès qu'on a scrollé de 80px, on passe en translucide
       window.addEventListener("scroll", () => {
         if (window.scrollY > 80) {
           header.classList.add("scrolled");
