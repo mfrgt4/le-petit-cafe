@@ -1,1238 +1,2511 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Le Petit Café — Café • Brunch • Gourmandises | Le Puy-en-Velay</title>
-  <meta name="description" content="Coffee, douceur & good vibes. Un petit café plein d'amour au Puy-en-Velay : café de spécialité, brunch du week-end et pâtisseries maison." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Le Petit Café — Café • Brunch • Gourmandises | Le Puy-en-Velay
+    </title>
+    <meta
+      name="description"
+      content="Coffee, douceur & good vibes. Un petit café plein d'amour au Puy-en-Velay : café de spécialité, brunch du week-end et pâtisseries maison."
+    />
 
-  <!-- Google Fonts Éditoriales : Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts Éditoriales : Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Tokens de couleurs exacts (Palette Figma) & Styles Éditoriaux incluant Bright Regular -->
-  <style>
-    @font-face {
-      font-family: 'Bright Regular';
-      src: url('https://db.onlinewebfonts.com/t/787265bc7e7b8a7f920252ea93e3d489.woff2') format('woff2'),
-           url('https://db.onlinewebfonts.com/t/787265bc7e7b8a7f920252ea93e3d489.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
+    <!-- Tokens de couleurs exacts (Palette Figma) & Styles Éditoriaux incluant Bright Regular -->
+    <style>
+      @font-face {
+        font-family: "Bright Regular";
+        src: url("fonts/Bright.otf") format("opentype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
 
-    :root {
-      /* COULEURS TITRES (Marron / Beige rosé) */
-      --titres-50: #F1EDEB;
-      --titres-100: #D2C8C1;
-      --titres-200: #D8AEA3;
-      --titres-300: #9F8879;
-      --titres-400: #8C715F;
-      --titres-500: #6F4E37;
-      --titres-600: #654732;
-      --titres-700: #4F3727;
-      --titres-800: #3D2B1E;
-      --titres-900: #212117;
+      :root {
+        /* COULEURS TITRES (Marron / Beige rosé) */
+        --titres-50: #f1edeb;
+        --titres-100: #d2c8c1;
+        --titres-200: #d8aea3;
+        --titres-300: #9f8879;
+        --titres-400: #8c715f;
+        --titres-500: #6f4e37;
+        --titres-600: #654732;
+        --titres-700: #4f3727;
+        --titres-800: #3d2b1e;
+        --titres-900: #212117;
 
-      /* COULEURS BOUTONS & DÉCOS (Rose poudré) */
-      --boutons-50: #FDF5F7;
-      --boutons-100: #F8E0E6;
-      --boutons-200: #F4D0DA;
-      --boutons-300: #F0BBC9;
-      --boutons-400: #EDAEBF;
-      --boutons-500: #E89AAF;
-      --boutons-600: #D38C9F;
-      --boutons-700: #A5677C;
-      --boutons-800: #805560;
-      --boutons-900: #61414A;
+        /* COULEURS BOUTONS & DÉCOS (Rose poudré) */
+        --boutons-50: #fdf5f7;
+        --boutons-100: #f8e0e6;
+        --boutons-200: #f4d0da;
+        --boutons-300: #f0bbc9;
+        --boutons-400: #edaebf;
+        --boutons-500: #e89aaf;
+        --boutons-600: #d38c9f;
+        --boutons-700: #a5677c;
+        --boutons-800: #805560;
+        --boutons-900: #61414a;
 
-      --blanc: #FFFFFF;
-      --noir: #000000;
-      --creme: #FFF9F5;
-    }
+        --blanc: #ffffff;
+        --noir: #000000;
+        --creme: #fff9f5;
+      }
 
-    * {
-      box-sizing: border-box;
-    }
+      * {
+        box-sizing: border-box;
+      }
 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      color: var(--titres-900);
-      background-color: var(--titres-50);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        color: var(--titres-900);
+        background-color: var(--titres-50);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
 
-    /* Typographie des grands titres : Bright Regular avec fallback serif élégant */
-    .font-bright {
-      font-family: 'Bright Regular', Georgia, serif;
-      letter-spacing: -0.01em;
-    }
+      /* Typographie des grands titres : Bright Regular avec fallback serif élégant */
+      .font-bright {
+        font-family: "Bright Regular", Georgia, serif;
+        letter-spacing: -0.01em;
+      }
 
-    .shadow-editorial {
-      box-shadow: 0 20px 45px -15px rgba(61, 43, 30, 0.10), 0 4px 16px -4px rgba(111, 78, 55, 0.05);
-    }
+      .shadow-editorial {
+        box-shadow:
+          0 20px 45px -15px rgba(61, 43, 30, 0.1),
+          0 4px 16px -4px rgba(111, 78, 55, 0.05);
+      }
 
-    .shadow-card-hover {
-      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-    }
+      .shadow-card-hover {
+        transition:
+          transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      }
 
-    .shadow-card-hover:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 28px 55px -15px rgba(61, 43, 30, 0.16), 0 8px 20px -6px rgba(211, 140, 159, 0.22);
-    }
+      .shadow-card-hover:hover {
+        transform: translateY(-6px);
+        box-shadow:
+          0 28px 55px -15px rgba(61, 43, 30, 0.16),
+          0 8px 20px -6px rgba(211, 140, 159, 0.22);
+      }
 
-    @keyframes marqueeScroll {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
+      @keyframes marqueeScroll {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
 
-    .animate-marquee {
-      display: flex;
-      width: max-content;
-      animation: marqueeScroll 34s linear infinite;
-    }
+      .animate-marquee {
+        display: flex;
+        width: max-content;
+        animation: marqueeScroll 34s linear infinite;
+      }
 
-    .animate-marquee:hover {
-      animation-play-state: paused;
-    }
+      .animate-marquee:hover {
+        animation-play-state: paused;
+      }
 
-    @keyframes steamSubtle {
-      0%, 100% { transform: translateY(0); opacity: 0.65; }
-      50% { transform: translateY(-2.5px); opacity: 1; }
-    }
+      @keyframes steamSubtle {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 0.65;
+        }
+        50% {
+          transform: translateY(-2.5px);
+          opacity: 1;
+        }
+      }
 
-    .steam-1 { animation: steamSubtle 3.2s ease-in-out infinite; }
-    .steam-2 { animation: steamSubtle 3.2s ease-in-out 1.1s infinite; }
+      .steam-1 {
+        animation: steamSubtle 3.2s ease-in-out infinite;
+      }
+      .steam-2 {
+        animation: steamSubtle 3.2s ease-in-out 1.1s infinite;
+      }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+          opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-    .menu-dots {
-      flex: 1;
-      border-bottom: 1px dotted var(--titres-300);
-      margin: 0 12px;
-      position: relative;
-      top: -5px;
-    }
+      .menu-dots {
+        flex: 1;
+        border-bottom: 1px dotted var(--titres-300);
+        margin: 0 12px;
+        position: relative;
+        top: -5px;
+      }
 
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: var(--boutons-50);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--titres-200);
-      border-radius: 9999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--titres-500);
-    }
-  </style>
-</head>
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--boutons-50);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--titres-200);
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--titres-500);
+      }
+    </style>
+  </head>
 
-<body class="selection:bg-[#F4D0DA] selection:text-[#3D2B1E]">
-
-  <!-- =====================================================================
+  <body class="selection:bg-[#F4D0DA] selection:text-[#3D2B1E]">
+    <!-- =====================================================================
        1. HEADER FIXE (Glassmorphism épuré, typographie éditoriale)
   ====================================================================== -->
-  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-[#FDF5F7]/85 backdrop-blur-xl border-b border-[#6F4E37]/10 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 h-20 flex items-center justify-between">
-      
-      <!-- Logo minimaliste tasse marron avec cœur + Le Petit Café -->
-      <a href="#accueil" class="flex items-center gap-3.5 group focus:outline-none">
-        <div class="w-10 h-10 rounded-full bg-[#F8E0E6] border border-[#6F4E37]/15 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-          <svg class="w-5 h-5" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path class="steam-1" d="M13 9.5C13 7.8 14.5 7 14.5 5.2" stroke="#6F4E37" stroke-width="1.6" stroke-linecap="round"/>
-            <path class="steam-2" d="M18.5 9.5C18.5 7.8 20 7 20 5.2" stroke="#6F4E37" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M25 15.5H27.8C29.8 15.5 31.5 17.2 31.5 19.2C31.5 21.2 29.8 22.9 27.8 22.9H25" stroke="#6F4E37" stroke-width="2" stroke-linecap="round"/>
-            <path d="M7.5 13.5H25.5V20.5C25.5 25.5 21.5 29.5 16.5 29.5C11.5 29.5 7.5 25.5 7.5 20.5V13.5Z" fill="#6F4E37"/>
-            <path d="M6 32H27" stroke="#6F4E37" stroke-width="2" stroke-linecap="round"/>
-            <path d="M16.5 24.5C16.5 24.5 12.5 21.8 12.5 19.2C12.5 17.9 13.5 17 14.7 17C15.5 17 16.1 17.4 16.5 18.1C16.9 17.4 17.5 17 18.3 17C19.5 17 20.5 17.9 20.5 19.2C20.5 21.8 16.5 24.5 16.5 24.5Z" fill="#F8E0E6"/>
-          </svg>
-        </div>
-        <div class="flex flex-col">
-          <span class="font-bright text-xl sm:text-2xl text-[#6F4E37] leading-none">Le Petit Café</span>
-          <span class="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#8C715F] mt-1">Café • Brunch • Gourmandises</span>
-        </div>
-      </a>
-
-      <!-- Navigation Desktop épurée -->
-      <nav class="hidden lg:flex items-center gap-8" aria-label="Navigation principale">
-        <a href="#accueil" class="text-sm font-medium text-[#6F4E37] hover:text-[#3D2B1E] transition-colors">Accueil</a>
-        <a href="#histoire" class="text-sm font-medium text-[#6F4E37]/80 hover:text-[#6F4E37] transition-colors">Notre histoire</a>
-        <a href="#menu" class="text-sm font-medium text-[#6F4E37]/80 hover:text-[#6F4E37] transition-colors">Menu</a>
-        <a href="#brunch" class="text-sm font-medium text-[#6F4E37]/80 hover:text-[#6F4E37] transition-colors">Brunch</a>
-        <a href="#trouver" class="text-sm font-medium text-[#6F4E37]/80 hover:text-[#6F4E37] transition-colors">Nous trouver</a>
-      </nav>
-
-      <!-- Bouton pilule marron + Burger Mobile -->
-      <div class="flex items-center gap-3">
-        <a href="#menu" class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#6F4E37] hover:bg-[#4F3727] text-white text-xs uppercase tracking-[0.14em] font-semibold transition-all duration-300 shadow-sm hover:shadow">
-          <span>Voir le menu</span>
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 bg-[#FDF5F7]/85 backdrop-blur-xl border-b border-[#6F4E37]/10 transition-all duration-300"
+    >
+      <div
+        class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 h-20 flex items-center justify-between"
+      >
+        <!-- Logo minimaliste tasse marron avec cœur + Le Petit Café -->
+        <a
+          href="#accueil"
+          class="flex items-center gap-3.5 group focus:outline-none"
+        >
+          <div
+            class="w-10 h-10 rounded-full bg-[#F8E0E6] border border-[#6F4E37]/15 flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
+          >
+            <svg
+              class="w-5 h-5"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                class="steam-1"
+                d="M13 9.5C13 7.8 14.5 7 14.5 5.2"
+                stroke="#6F4E37"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+              <path
+                class="steam-2"
+                d="M18.5 9.5C18.5 7.8 20 7 20 5.2"
+                stroke="#6F4E37"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+              <path
+                d="M25 15.5H27.8C29.8 15.5 31.5 17.2 31.5 19.2C31.5 21.2 29.8 22.9 27.8 22.9H25"
+                stroke="#6F4E37"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <path
+                d="M7.5 13.5H25.5V20.5C25.5 25.5 21.5 29.5 16.5 29.5C11.5 29.5 7.5 25.5 7.5 20.5V13.5Z"
+                fill="#6F4E37"
+              />
+              <path
+                d="M6 32H27"
+                stroke="#6F4E37"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <path
+                d="M16.5 24.5C16.5 24.5 12.5 21.8 12.5 19.2C12.5 17.9 13.5 17 14.7 17C15.5 17 16.1 17.4 16.5 18.1C16.9 17.4 17.5 17 18.3 17C19.5 17 20.5 17.9 20.5 19.2C20.5 21.8 16.5 24.5 16.5 24.5Z"
+                fill="#F8E0E6"
+              />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="font-bright text-xl sm:text-2xl text-[#6F4E37] leading-none"
+              >Le Petit Café</span
+            >
+            <span
+              class="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#8C715F] mt-1"
+              >Café • Brunch • Gourmandises</span
+            >
+          </div>
         </a>
 
-        <button id="mobile-menu-btn" type="button" aria-label="Ouvrir le menu" class="lg:hidden p-2.5 rounded-full bg-[#F8E0E6] text-[#6F4E37] hover:bg-[#F4D0DA] transition-colors">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
-          </svg>
-        </button>
+        <!-- Navigation Desktop épurée -->
+        <nav
+          class="hidden lg:flex items-center gap-8"
+          aria-label="Navigation principale"
+        >
+          <a
+            href="#accueil"
+            class="text-sm font-medium text-[#6F4E37] hover:text-[#3D2B1E] transition-colors"
+            >Accueil</a
+          >
+          <a
+            href="#histoire"
+            class="text-sm font-medium text-[#6F4E37]/80 hover:text-[#6F4E37] transition-colors"
+            >Notre histoire</a
+          >
+          <a
+            href="#menu"
+            class="text-sm font-medium text-[#6F4E37]/80 hover:text-[#6F4E37] transition-colors"
+            >Menu</a
+          >
+          <a
+            href="#brunch"
+            class="text-sm font-medium text-[#6F4E37]/80 hover:text-[#6F4E37] transition-colors"
+            >Brunch</a
+          >
+          <a
+            href="#trouver"
+            class="text-sm font-medium text-[#6F4E37]/80 hover:text-[#6F4E37] transition-colors"
+            >Nous trouver</a
+          >
+        </nav>
+
+        <!-- Bouton pilule marron + Burger Mobile -->
+        <div class="flex items-center gap-3">
+          <a
+            href="#menu"
+            class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#6F4E37] hover:bg-[#4F3727] text-white text-xs uppercase tracking-[0.14em] font-semibold transition-all duration-300 shadow-sm hover:shadow"
+          >
+            <span>Voir le menu</span>
+          </a>
+
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            aria-label="Ouvrir le menu"
+            class="lg:hidden p-2.5 rounded-full bg-[#F8E0E6] text-[#6F4E37] hover:bg-[#F4D0DA] transition-colors"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 7h16M4 12h16M4 17h16"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
 
-    <!-- Menu Mobile -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-[#FDF5F7]/98 backdrop-blur-xl border-b border-[#F4D0DA] px-6 pt-4 pb-7 space-y-1.5 shadow-xl">
-      <a href="#accueil" class="mobile-link block px-4 py-3 rounded-2xl text-sm font-semibold text-[#6F4E37] hover:bg-[#F8E0E6]">Accueil</a>
-      <a href="#histoire" class="mobile-link block px-4 py-3 rounded-2xl text-sm font-semibold text-[#6F4E37] hover:bg-[#F8E0E6]">Notre histoire</a>
-      <a href="#menu" class="mobile-link block px-4 py-3 rounded-2xl text-sm font-semibold text-[#6F4E37] hover:bg-[#F8E0E6]">La carte &amp; Menu</a>
-      <a href="#brunch" class="mobile-link block px-4 py-3 rounded-2xl text-sm font-semibold text-[#6F4E37] hover:bg-[#F8E0E6]">Brunch du week-end</a>
-      <a href="#trouver" class="mobile-link block px-4 py-3 rounded-2xl text-sm font-semibold text-[#6F4E37] hover:bg-[#F8E0E6]">Nous trouver</a>
-      <div class="pt-3">
-        <a href="#menu" class="mobile-link block text-center w-full py-3.5 rounded-full bg-[#6F4E37] text-white text-xs uppercase tracking-[0.15em] font-semibold">Voir le menu</a>
+      <!-- Menu Mobile -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden bg-[#FDF5F7]/98 backdrop-blur-xl border-b border-[#F4D0DA] px-6 pt-4 pb-7 space-y-1.5 shadow-xl"
+      >
+        <a
+          href="#accueil"
+          class="mobile-link block px-4 py-3 rounded-2xl text-sm font-semibold text-[#6F4E37] hover:bg-[#F8E0E6]"
+          >Accueil</a
+        >
+        <a
+          href="#histoire"
+          class="mobile-link block px-4 py-3 rounded-2xl text-sm font-semibold text-[#6F4E37] hover:bg-[#F8E0E6]"
+          >Notre histoire</a
+        >
+        <a
+          href="#menu"
+          class="mobile-link block px-4 py-3 rounded-2xl text-sm font-semibold text-[#6F4E37] hover:bg-[#F8E0E6]"
+          >La carte &amp; Menu</a
+        >
+        <a
+          href="#brunch"
+          class="mobile-link block px-4 py-3 rounded-2xl text-sm font-semibold text-[#6F4E37] hover:bg-[#F8E0E6]"
+          >Brunch du week-end</a
+        >
+        <a
+          href="#trouver"
+          class="mobile-link block px-4 py-3 rounded-2xl text-sm font-semibold text-[#6F4E37] hover:bg-[#F8E0E6]"
+          >Nous trouver</a
+        >
+        <div class="pt-3">
+          <a
+            href="#menu"
+            class="mobile-link block text-center w-full py-3.5 rounded-full bg-[#6F4E37] text-white text-xs uppercase tracking-[0.15em] font-semibold"
+            >Voir le menu</a
+          >
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main id="accueil" class="pt-20">
-
-    <!-- =====================================================================
+    <main id="accueil" class="pt-20">
+      <!-- =====================================================================
          2. HERO IMMERSIF ÉDITORIAL (Fidèle à la maquette Figma)
     ====================================================================== -->
-    <section class="relative">
-      <div class="relative min-h-[560px] sm:min-h-[630px] lg:min-h-[680px] flex items-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=2000&q=90"
-          alt="Main tenant une tasse de café latte art vue du dessus sur une table en bois"
-          class="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        <div class="absolute inset-0 bg-gradient-to-r from-[#212117]/80 via-[#3D2B1E]/55 to-transparent"></div>
+      <section class="relative">
+        <div
+          class="relative min-h-[560px] sm:min-h-[630px] lg:min-h-[680px] flex items-center overflow-hidden"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=2000&q=90"
+            alt="Main tenant une tasse de café latte art vue du dessus sur une table en bois"
+            class="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-[#212117]/80 via-[#3D2B1E]/55 to-transparent"
+          ></div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-20 w-full">
-          <div class="max-w-2xl">
-            <div class="flex flex-wrap items-center gap-2.5 mb-7">
-              <span class="px-3.5 py-1 rounded-full bg-[#FDF5F7]/90 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold">Fait maison</span>
-              <span class="px-3.5 py-1 rounded-full bg-[#F8E0E6]/90 backdrop-blur-md text-[#4F3727] text-[11px] uppercase tracking-[0.14em] font-semibold">Cosy</span>
-              <span class="px-3.5 py-1 rounded-full bg-[#3D2B1E]/70 backdrop-blur-md border border-white/20 text-[#FDF5F7] text-[11px] uppercase tracking-[0.14em] font-semibold">Au Puy-en-Velay</span>
-            </div>
+          <div
+            class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-20 w-full"
+          >
+            <div class="max-w-2xl">
+              <div class="flex flex-wrap items-center gap-2.5 mb-7">
+                <span
+                  class="px-3.5 py-1 rounded-full bg-[#FDF5F7]/90 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold"
+                  >Fait maison</span
+                >
+                <span
+                  class="px-3.5 py-1 rounded-full bg-[#F8E0E6]/90 backdrop-blur-md text-[#4F3727] text-[11px] uppercase tracking-[0.14em] font-semibold"
+                  >Cosy</span
+                >
+                <span
+                  class="px-3.5 py-1 rounded-full bg-[#3D2B1E]/70 backdrop-blur-md border border-white/20 text-[#FDF5F7] text-[11px] uppercase tracking-[0.14em] font-semibold"
+                  >Au Puy-en-Velay</span
+                >
+              </div>
 
-            <h1 class="font-bright text-4xl sm:text-6xl lg:text-[68px] leading-[1.05] text-white tracking-tight">
-              Un petit café, <br /><span class="text-[#F8E0E6]">plein de douceur.</span>
-            </h1>
+              <h1
+                class="font-bright text-4xl sm:text-6xl lg:text-[68px] leading-[1.05] text-white tracking-tight"
+              >
+                Un petit café, <br /><span class="text-[#F8E0E6]"
+                  >plein de douceur.</span
+                >
+              </h1>
 
-            <p class="mt-6 text-base sm:text-lg text-[#FDF5F7]/90 font-normal leading-relaxed max-w-lg">
-              Un petit café, plein d’amour. Installe-toi, on s’occupe de tout : cafés de spécialité torréfiés avec soin, brunchs gourmands et pâtisseries du matin.
-            </p>
+              <p
+                class="mt-6 text-base sm:text-lg text-[#FDF5F7]/90 font-normal leading-relaxed max-w-lg"
+              >
+                Un petit café, plein d’amour. Installe-toi, on s’occupe de tout
+                : cafés de spécialité torréfiés avec soin, brunchs gourmands et
+                pâtisseries du matin.
+              </p>
 
-            <div class="mt-9 flex flex-wrap items-center gap-4">
-              <a href="#menu" class="px-8 py-4 rounded-full bg-[#6F4E37] hover:bg-[#4F3727] text-white text-xs uppercase tracking-[0.15em] font-semibold transition-all duration-300 shadow-lg hover:translate-y-[-2px]">
-                Découvrir le menu
-              </a>
-              <a href="#trouver" class="px-8 py-4 rounded-full bg-white/10 hover:bg-white hover:text-[#6F4E37] text-white border border-white/60 text-xs uppercase tracking-[0.15em] font-semibold backdrop-blur-md transition-all duration-300">
-                Nous trouver
-              </a>
+              <div class="mt-9 flex flex-wrap items-center gap-4">
+                <a
+                  href="#menu"
+                  class="px-8 py-4 rounded-full bg-[#6F4E37] hover:bg-[#4F3727] text-white text-xs uppercase tracking-[0.15em] font-semibold transition-all duration-300 shadow-lg hover:translate-y-[-2px]"
+                >
+                  Découvrir le menu
+                </a>
+                <a
+                  href="#trouver"
+                  class="px-8 py-4 rounded-full bg-white/10 hover:bg-white hover:text-[#6F4E37] text-white border border-white/60 text-xs uppercase tracking-[0.15em] font-semibold backdrop-blur-md transition-all duration-300"
+                >
+                  Nous trouver
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- 3. BANDEAU MARQUEE ÉDITORIAL -->
-      <div class="bg-[#3D2B1E] text-[#F8E0E6] py-3.5 overflow-hidden border-y border-[#EDAEBF]/20">
-        <div class="animate-marquee flex items-center gap-10 text-xs font-medium tracking-[0.24em] uppercase">
-          <span>Espresso</span><span class="text-[#EDAEBF]">•</span>
-          <span>Croissant</span><span class="text-[#EDAEBF]">•</span>
-          <span>Cinnamon Roll</span><span class="text-[#EDAEBF]">•</span>
-          <span>Iced Latte</span><span class="text-[#EDAEBF]">•</span>
-          <span>Matcha</span><span class="text-[#EDAEBF]">•</span>
-          <span>Brunch</span><span class="text-[#EDAEBF]">•</span>
-          <span>Espresso</span><span class="text-[#EDAEBF]">•</span>
-          <span>Croissant</span><span class="text-[#EDAEBF]">•</span>
-          <span>Cinnamon Roll</span><span class="text-[#EDAEBF]">•</span>
-          <span>Iced Latte</span><span class="text-[#EDAEBF]">•</span>
-          <span>Matcha</span><span class="text-[#EDAEBF]">•</span>
-          <span>Brunch</span><span class="text-[#EDAEBF]">•</span>
+        <!-- 3. BANDEAU MARQUEE ÉDITORIAL -->
+        <div
+          class="bg-[#3D2B1E] text-[#F8E0E6] py-3.5 overflow-hidden border-y border-[#EDAEBF]/20"
+        >
+          <div
+            class="animate-marquee flex items-center gap-10 text-xs font-medium tracking-[0.24em] uppercase"
+          >
+            <span>Espresso</span><span class="text-[#EDAEBF]">•</span>
+            <span>Croissant</span><span class="text-[#EDAEBF]">•</span>
+            <span>Cinnamon Roll</span><span class="text-[#EDAEBF]">•</span>
+            <span>Iced Latte</span><span class="text-[#EDAEBF]">•</span>
+            <span>Matcha</span><span class="text-[#EDAEBF]">•</span>
+            <span>Brunch</span><span class="text-[#EDAEBF]">•</span>
+            <span>Espresso</span><span class="text-[#EDAEBF]">•</span>
+            <span>Croissant</span><span class="text-[#EDAEBF]">•</span>
+            <span>Cinnamon Roll</span><span class="text-[#EDAEBF]">•</span>
+            <span>Iced Latte</span><span class="text-[#EDAEBF]">•</span>
+            <span>Matcha</span><span class="text-[#EDAEBF]">•</span>
+            <span>Brunch</span><span class="text-[#EDAEBF]">•</span>
+          </div>
         </div>
-      </div>
 
-      <!-- BANDEAU ROSE POUDRÉ : Vitrine élégante + 3 médaillons -->
-      <div class="bg-[#EDAEBF] pt-16 sm:pt-24 pb-14 relative">
-        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-          
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div class="lg:col-span-5 text-white reveal">
-              <p class="text-xs uppercase tracking-[0.22em] font-semibold text-[#FFF9F5]/90 mb-3">
-                L’adresse douce du Puy
-              </p>
-              <h2 class="font-bright text-4xl sm:text-5xl lg:text-[52px] leading-[1.08] text-white">
-                Un petit café, <br /><span>plein d’amour.</span>
-              </h2>
-              <p class="mt-6 text-base text-[#FFF9F5] leading-relaxed font-normal">
-                Derrière notre devanture rose poudré et crème, une parenthèse lumineuse t’attend. L’odeur des grains fraîchement moulus, la chaleur des viennoiseries dorées et une atmosphère pensée pour savourer chaque instant.
-              </p>
-              <div class="mt-8 pt-6 border-t border-white/25 flex items-center gap-6 text-xs uppercase tracking-[0.16em] font-semibold text-white">
-                <span>12 rue des Rêves</span>
-                <span>•</span>
-                <span>7j / 7</span>
+        <!-- BANDEAU ROSE POUDRÉ : Vitrine élégante + 3 médaillons -->
+        <div class="bg-[#EDAEBF] pt-16 sm:pt-24 pb-14 relative">
+          <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
+            >
+              <div class="lg:col-span-5 text-white reveal">
+                <p
+                  class="text-xs uppercase tracking-[0.22em] font-semibold text-[#FFF9F5]/90 mb-3"
+                >
+                  L’adresse douce du Puy
+                </p>
+                <h2
+                  class="font-bright text-4xl sm:text-5xl lg:text-[52px] leading-[1.08] text-white"
+                >
+                  Un petit café, <br /><span>plein d’amour.</span>
+                </h2>
+                <p
+                  class="mt-6 text-base text-[#FFF9F5] leading-relaxed font-normal"
+                >
+                  Derrière notre devanture rose poudré et crème, une parenthèse
+                  lumineuse t’attend. L’odeur des grains fraîchement moulus, la
+                  chaleur des viennoiseries dorées et une atmosphère pensée pour
+                  savourer chaque instant.
+                </p>
+                <div
+                  class="mt-8 pt-6 border-t border-white/25 flex items-center gap-6 text-xs uppercase tracking-[0.16em] font-semibold text-white"
+                >
+                  <span>12 rue des Rêves</span>
+                  <span>•</span>
+                  <span>7j / 7</span>
+                </div>
               </div>
-            </div>
 
-            <div class="lg:col-span-7 reveal">
-              <div class="relative rounded-[28px] overflow-hidden shadow-editorial bg-[#FFF9F5] p-2.5 sm:p-3">
-                <div class="relative h-[340px] sm:h-[420px] rounded-[22px] overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1559305616-3f99cd43e353?auto=format&fit=crop&w=1200&q=90"
-                    alt="Devanture élégante et lumineuse du Petit Café"
-                    class="w-full h-full object-cover object-center"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-[#3D2B1E]/60 via-[#EDAEBF]/15 to-transparent"></div>
-                  
-                  <div class="absolute inset-0 flex items-center justify-center p-6">
-                    <div class="px-8 py-6 rounded-2xl bg-[#3D2B1E]/85 backdrop-blur-md border border-[#F8E0E6]/40 text-center shadow-2xl">
-                      <p class="text-[10px] uppercase tracking-[0.28em] text-[#F4D0DA] mb-1.5">Maison Fondée avec Amour</p>
-                      <p class="font-bright text-3xl sm:text-4xl text-white tracking-tight">Le Petit Café</p>
-                      <div class="w-10 h-[1px] bg-[#EDAEBF] mx-auto my-2.5"></div>
-                      <p class="text-[11px] tracking-[0.18em] uppercase text-[#F8E0E6]/90">Café • Brunch • Gourmandises</p>
+              <div class="lg:col-span-7 reveal">
+                <div
+                  class="relative rounded-[28px] overflow-hidden shadow-editorial bg-[#FFF9F5] p-2.5 sm:p-3"
+                >
+                  <div
+                    class="relative h-[340px] sm:h-[420px] rounded-[22px] overflow-hidden"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1559305616-3f99cd43e353?auto=format&fit=crop&w=1200&q=90"
+                      alt="Devanture élégante et lumineuse du Petit Café"
+                      class="w-full h-full object-cover object-center"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-[#3D2B1E]/60 via-[#EDAEBF]/15 to-transparent"
+                    ></div>
+
+                    <div
+                      class="absolute inset-0 flex items-center justify-center p-6"
+                    >
+                      <div
+                        class="px-8 py-6 rounded-2xl bg-[#3D2B1E]/85 backdrop-blur-md border border-[#F8E0E6]/40 text-center shadow-2xl"
+                      >
+                        <p
+                          class="text-[10px] uppercase tracking-[0.28em] text-[#F4D0DA] mb-1.5"
+                        >
+                          Maison Fondée avec Amour
+                        </p>
+                        <p
+                          class="font-bright text-3xl sm:text-4xl text-white tracking-tight"
+                        >
+                          Le Petit Café
+                        </p>
+                        <div
+                          class="w-10 h-[1px] bg-[#EDAEBF] mx-auto my-2.5"
+                        ></div>
+                        <p
+                          class="text-[11px] tracking-[0.18em] uppercase text-[#F8E0E6]/90"
+                        >
+                          Café • Brunch • Gourmandises
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <div
+              class="mt-20 sm:mt-24 grid grid-cols-1 sm:grid-cols-3 gap-10 max-w-4xl mx-auto text-center"
+            >
+              <div class="flex flex-col items-center reveal group">
+                <span
+                  class="text-[11px] uppercase tracking-[0.22em] font-semibold text-[#6F4E37] mb-2"
+                  >01</span
+                >
+                <h3 class="font-bright text-2xl text-[#6F4E37] mb-5">
+                  Gourmandise
+                </h3>
+                <div
+                  class="w-48 h-48 sm:w-52 sm:h-52 rounded-full overflow-hidden ring-4 ring-white/80 shadow-editorial"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=650&q=85"
+                    alt="Latte art crémeux"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="flex flex-col items-center reveal group"
+                style="transition-delay: 100ms"
+              >
+                <span
+                  class="text-[11px] uppercase tracking-[0.22em] font-semibold text-[#6F4E37] mb-2"
+                  >02</span
+                >
+                <h3 class="font-bright text-2xl text-[#6F4E37] mb-5">
+                  Douceur
+                </h3>
+                <div
+                  class="w-48 h-48 sm:w-52 sm:h-52 rounded-full overflow-hidden ring-4 ring-white/80 shadow-editorial"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=650&q=85"
+                    alt="Pâtisseries dorées du matin"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+
+              <div
+                class="flex flex-col items-center reveal group"
+                style="transition-delay: 200ms"
+              >
+                <span
+                  class="text-[11px] uppercase tracking-[0.22em] font-semibold text-[#6F4E37] mb-2"
+                  >03</span
+                >
+                <h3 class="font-bright text-2xl text-[#6F4E37] mb-5">
+                  Convivialité
+                </h3>
+                <div
+                  class="w-48 h-48 sm:w-52 sm:h-52 rounded-full overflow-hidden ring-4 ring-white/80 shadow-editorial"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=650&q=85"
+                    alt="Moment chaleureux entre amies autour d'un café"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-
-          <div class="mt-20 sm:mt-24 grid grid-cols-1 sm:grid-cols-3 gap-10 max-w-4xl mx-auto text-center">
-            <div class="flex flex-col items-center reveal group">
-              <span class="text-[11px] uppercase tracking-[0.22em] font-semibold text-[#6F4E37] mb-2">01</span>
-              <h3 class="font-bright text-2xl text-[#6F4E37] mb-5">Gourmandise</h3>
-              <div class="w-48 h-48 sm:w-52 sm:h-52 rounded-full overflow-hidden ring-4 ring-white/80 shadow-editorial">
-                <img
-                  src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=650&q=85"
-                  alt="Latte art crémeux"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-            </div>
-
-            <div class="flex flex-col items-center reveal group" style="transition-delay: 100ms;">
-              <span class="text-[11px] uppercase tracking-[0.22em] font-semibold text-[#6F4E37] mb-2">02</span>
-              <h3 class="font-bright text-2xl text-[#6F4E37] mb-5">Douceur</h3>
-              <div class="w-48 h-48 sm:w-52 sm:h-52 rounded-full overflow-hidden ring-4 ring-white/80 shadow-editorial">
-                <img
-                  src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=650&q=85"
-                  alt="Pâtisseries dorées du matin"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-            </div>
-
-            <div class="flex flex-col items-center reveal group" style="transition-delay: 200ms;">
-              <span class="text-[11px] uppercase tracking-[0.22em] font-semibold text-[#6F4E37] mb-2">03</span>
-              <h3 class="font-bright text-2xl text-[#6F4E37] mb-5">Convivialité</h3>
-              <div class="w-48 h-48 sm:w-52 sm:h-52 rounded-full overflow-hidden ring-4 ring-white/80 shadow-editorial">
-                <img
-                  src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=650&q=85"
-                  alt="Moment chaleureux entre amies autour d'un café"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-            </div>
-          </div>
-
         </div>
-      </div>
 
-      <div class="w-full overflow-hidden leading-none bg-[#F1EDEB]">
-        <svg viewBox="0 0 1440 72" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-10 sm:h-16 block" preserveAspectRatio="none">
-          <path d="M0 0H1440V28C1200 72 960 6 720 40C480 74 240 12 0 46V0Z" fill="#EDAEBF"/>
-        </svg>
-      </div>
-    </section>
+        <div class="w-full overflow-hidden leading-none bg-[#F1EDEB]">
+          <svg
+            viewBox="0 0 1440 72"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-full h-10 sm:h-16 block"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0 0H1440V28C1200 72 960 6 720 40C480 74 240 12 0 46V0Z"
+              fill="#EDAEBF"
+            />
+          </svg>
+        </div>
+      </section>
 
-    <!-- =====================================================================
+      <!-- =====================================================================
          4. NOTRE HISTOIRE
     ====================================================================== -->
-    <section id="histoire" class="py-20 sm:py-28 bg-[#F1EDEB]">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center reveal">
-          
-          <div class="lg:col-span-6 order-2 lg:order-1">
-            <div class="relative rounded-[28px] overflow-hidden shadow-editorial">
-              <img
-                src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1100&q=85"
-                alt="Intérieur lumineux et chaleureux du Petit Café"
-                class="w-full h-[420px] sm:h-[490px] object-cover"
-              />
-              <div class="absolute bottom-5 left-5 right-5 sm:right-auto bg-[#FDF5F7]/95 backdrop-blur-md px-6 py-4 rounded-2xl shadow-lg">
-                <p class="font-bright text-base text-[#6F4E37]">Le Petit Café • Le Puy-en-Velay</p>
-                <p class="text-xs text-[#8C715F] mt-0.5">Un refuge lumineux au cœur de la ville</p>
+      <section id="histoire" class="py-20 sm:py-28 bg-[#F1EDEB]">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center reveal"
+          >
+            <div class="lg:col-span-6 order-2 lg:order-1">
+              <div
+                class="relative rounded-[28px] overflow-hidden shadow-editorial"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1100&q=85"
+                  alt="Intérieur lumineux et chaleureux du Petit Café"
+                  class="w-full h-[420px] sm:h-[490px] object-cover"
+                />
+                <div
+                  class="absolute bottom-5 left-5 right-5 sm:right-auto bg-[#FDF5F7]/95 backdrop-blur-md px-6 py-4 rounded-2xl shadow-lg"
+                >
+                  <p class="font-bright text-base text-[#6F4E37]">
+                    Le Petit Café • Le Puy-en-Velay
+                  </p>
+                  <p class="text-xs text-[#8C715F] mt-0.5">
+                    Un refuge lumineux au cœur de la ville
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-6 order-1 lg:order-2">
+              <p
+                class="text-xs uppercase tracking-[0.22em] font-semibold text-[#8C715F] mb-3"
+              >
+                Notre histoire
+              </p>
+              <h2
+                class="font-bright text-3xl sm:text-5xl text-[#6F4E37] leading-[1.12]"
+              >
+                Comme à la maison, <br /><span class="text-[#8C715F]"
+                  >l’arôme du café en plus.</span
+                >
+              </h2>
+              <p
+                class="mt-6 text-[#212117]/85 text-base sm:text-lg leading-relaxed"
+              >
+                Imaginé comme une pause hors du temps au
+                <strong>Puy-en-Velay</strong>, Le Petit Café réunit l’exigence
+                d’un vrai coffee shop de spécialité et la tendresse d’un salon
+                de thé de quartier. Matières naturelles, tonalités poudrées et
+                recettes maison : chaque détail est pensé pour que tu t’y sentes
+                bien.
+              </p>
+              <blockquote
+                class="mt-5 pl-4 border-l-2 border-[#D38C9F] font-bright italic text-lg text-[#6F4E37]"
+              >
+                « Installe-toi, on s’occupe de tout. »
+              </blockquote>
+
+              <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div
+                  class="p-5 rounded-2xl bg-[#FFF9F5] border border-[#6F4E37]/10 shadow-sm"
+                >
+                  <svg
+                    class="w-6 h-6 text-[#6F4E37] mb-3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zm4-7v3m4-3v3m4-3v3"
+                    />
+                  </svg>
+                  <h3 class="font-bright text-base text-[#6F4E37]">
+                    Café de spécialité
+                  </h3>
+                  <p class="text-xs text-[#8C715F] mt-1.5 leading-relaxed">
+                    Grains fraîchement torréfiés &amp; extraction précise.
+                  </p>
+                </div>
+
+                <div
+                  class="p-5 rounded-2xl bg-[#FFF9F5] border border-[#6F4E37]/10 shadow-sm"
+                >
+                  <svg
+                    class="w-6 h-6 text-[#6F4E37] mb-3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 3c2.5 0 4.5 2 4.5 4.5 0 .7-.2 1.4-.5 2 1.8.6 3 2.3 3 4.3 0 2.5-2 4.5-4.5 4.5h-5C7 18.3 5 16.3 5 13.8c0-2 1.2-3.7 3-4.3-.3-.6-.5-1.3-.5-2C7.5 5 9.5 3 12 3z"
+                    />
+                  </svg>
+                  <h3 class="font-bright text-base text-[#6F4E37]">
+                    Pâtisseries maison
+                  </h3>
+                  <p class="text-xs text-[#8C715F] mt-1.5 leading-relaxed">
+                    Viennoiseries, cakes et tartes dorés chaque matin.
+                  </p>
+                </div>
+
+                <div
+                  class="p-5 rounded-2xl bg-[#FFF9F5] border border-[#6F4E37]/10 shadow-sm"
+                >
+                  <svg
+                    class="w-6 h-6 text-[#6F4E37] mb-3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    />
+                  </svg>
+                  <h3 class="font-bright text-base text-[#6F4E37]">
+                    Ambiance cosy
+                  </h3>
+                  <p class="text-xs text-[#8C715F] mt-1.5 leading-relaxed">
+                    Lumière douce, coin lecture &amp; accueil attentionné.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="lg:col-span-6 order-1 lg:order-2">
-            <p class="text-xs uppercase tracking-[0.22em] font-semibold text-[#8C715F] mb-3">
-              Notre histoire
-            </p>
-            <h2 class="font-bright text-3xl sm:text-5xl text-[#6F4E37] leading-[1.12]">
-              Comme à la maison, <br /><span class="text-[#8C715F]">l’arôme du café en plus.</span>
-            </h2>
-            <p class="mt-6 text-[#212117]/85 text-base sm:text-lg leading-relaxed">
-              Imaginé comme une pause hors du temps au <strong>Puy-en-Velay</strong>, Le Petit Café réunit l’exigence d’un vrai coffee shop de spécialité et la tendresse d’un salon de thé de quartier. Matières naturelles, tonalités poudrées et recettes maison : chaque détail est pensé pour que tu t’y sentes bien.
-            </p>
-            <blockquote class="mt-5 pl-4 border-l-2 border-[#D38C9F] font-bright italic text-lg text-[#6F4E37]">
-              « Installe-toi, on s’occupe de tout. »
-            </blockquote>
-
-            <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div class="p-5 rounded-2xl bg-[#FFF9F5] border border-[#6F4E37]/10 shadow-sm">
-                <svg class="w-6 h-6 text-[#6F4E37] mb-3" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zm4-7v3m4-3v3m4-3v3"/>
-                </svg>
-                <h3 class="font-bright text-base text-[#6F4E37]">Café de spécialité</h3>
-                <p class="text-xs text-[#8C715F] mt-1.5 leading-relaxed">Grains fraîchement torréfiés &amp; extraction précise.</p>
-              </div>
-
-              <div class="p-5 rounded-2xl bg-[#FFF9F5] border border-[#6F4E37]/10 shadow-sm">
-                <svg class="w-6 h-6 text-[#6F4E37] mb-3" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.5 0 4.5 2 4.5 4.5 0 .7-.2 1.4-.5 2 1.8.6 3 2.3 3 4.3 0 2.5-2 4.5-4.5 4.5h-5C7 18.3 5 16.3 5 13.8c0-2 1.2-3.7 3-4.3-.3-.6-.5-1.3-.5-2C7.5 5 9.5 3 12 3z"/>
-                </svg>
-                <h3 class="font-bright text-base text-[#6F4E37]">Pâtisseries maison</h3>
-                <p class="text-xs text-[#8C715F] mt-1.5 leading-relaxed">Viennoiseries, cakes et tartes dorés chaque matin.</p>
-              </div>
-
-              <div class="p-5 rounded-2xl bg-[#FFF9F5] border border-[#6F4E37]/10 shadow-sm">
-                <svg class="w-6 h-6 text-[#6F4E37] mb-3" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                </svg>
-                <h3 class="font-bright text-base text-[#6F4E37]">Ambiance cosy</h3>
-                <p class="text-xs text-[#8C715F] mt-1.5 leading-relaxed">Lumière douce, coin lecture &amp; accueil attentionné.</p>
-              </div>
-            </div>
-          </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- =====================================================================
+      <!-- =====================================================================
          5. SECTIONS CARTES UNIFORMISÉES (Incontournables, Douceurs, Fraîches)
     ====================================================================== -->
-    <section id="douceurs" class="py-12 sm:py-20 bg-[#F1EDEB]">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-24">
-
-        <!-- A. LES INCONTOURNABLES -->
-        <div class="reveal">
-          <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-            <div>
-              <p class="text-xs uppercase tracking-[0.22em] font-semibold text-[#8C715F] mb-2">Signatures de la maison</p>
-              <h2 class="font-bright text-3xl sm:text-5xl text-[#6F4E37]">Les Incontournables</h2>
+      <section id="douceurs" class="py-12 sm:py-20 bg-[#F1EDEB]">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 space-y-24">
+          <!-- A. LES INCONTOURNABLES -->
+          <div class="reveal">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4"
+            >
+              <div>
+                <p
+                  class="text-xs uppercase tracking-[0.22em] font-semibold text-[#8C715F] mb-2"
+                >
+                  Signatures de la maison
+                </p>
+                <h2 class="font-bright text-3xl sm:text-5xl text-[#6F4E37]">
+                  Les Incontournables
+                </h2>
+              </div>
+              <p class="text-sm text-[#4F3727] max-w-md">
+                Les trois créations favorites de nos habitués, préparées à la
+                minute tout au long de la journée.
+              </p>
             </div>
-            <p class="text-sm text-[#4F3727] max-w-md">
-              Les trois créations favorites de nos habitués, préparées à la minute tout au long de la journée.
-            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <article
+                class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col"
+              >
+                <div class="relative h-72 rounded-[20px] overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=850&q=85"
+                    alt="Iced Latte"
+                    class="w-full h-full object-cover"
+                  />
+                  <span
+                    class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm"
+                    >Best-seller</span
+                  >
+                </div>
+                <div
+                  class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between"
+                >
+                  <div>
+                    <div class="flex items-baseline justify-between gap-3">
+                      <h3 class="font-bright text-2xl text-[#6F4E37]">
+                        Iced Latte
+                      </h3>
+                      <span class="font-bright text-xl text-[#6F4E37]"
+                        >3,80€</span
+                      >
+                    </div>
+                    <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
+                      Double espresso velouté versé lentement sur un nuage de
+                      lait frais et glaçons cristallins.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col"
+              >
+                <div class="relative h-72 rounded-[20px] overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=850&q=85"
+                    alt="Croissant au beurre"
+                    class="w-full h-full object-cover"
+                  />
+                  <span
+                    class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm"
+                    >Best-seller</span
+                  >
+                </div>
+                <div
+                  class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between"
+                >
+                  <div>
+                    <div class="flex items-baseline justify-between gap-3">
+                      <h3 class="font-bright text-2xl text-[#6F4E37]">
+                        Croissant au beurre
+                      </h3>
+                      <span class="font-bright text-xl text-[#6F4E37]"
+                        >1,50€</span
+                      >
+                    </div>
+                    <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
+                      Feuilletage croustillant et doré au beurre fin, sorti du
+                      four chaque matin à l’ouverture.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col"
+              >
+                <div class="relative h-72 rounded-[20px] overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=850&q=85"
+                    alt="Cinnamon Roll"
+                    class="w-full h-full object-cover"
+                  />
+                  <span
+                    class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm"
+                    >Best-seller</span
+                  >
+                </div>
+                <div
+                  class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between"
+                >
+                  <div>
+                    <div class="flex items-baseline justify-between gap-3">
+                      <h3 class="font-bright text-2xl text-[#6F4E37]">
+                        Cinnamon Roll
+                      </h3>
+                      <span class="font-bright text-xl text-[#6F4E37]"
+                        >3,50€</span
+                      >
+                    </div>
+                    <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
+                      Brioche roulée moelleuse parfumée à la cannelle douce et
+                      nappée d’un glaçage vanille léger.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <article class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col">
-              <div class="relative h-72 rounded-[20px] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=850&q=85" alt="Iced Latte" class="w-full h-full object-cover"/>
-                <span class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm">Best-seller</span>
+          <!-- B. LES DOUCEURS RÉCONFORTANTES (Même design unifié) -->
+          <div class="reveal">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4"
+            >
+              <div>
+                <p
+                  class="text-xs uppercase tracking-[0.22em] font-semibold text-[#8C715F] mb-2"
+                >
+                  Les boissons chaudes
+                </p>
+                <h2 class="font-bright text-3xl sm:text-5xl text-[#6F4E37]">
+                  Les Douceurs Réconfortantes
+                </h2>
               </div>
-              <div class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-baseline justify-between gap-3">
-                    <h3 class="font-bright text-2xl text-[#6F4E37]">Iced Latte</h3>
-                    <span class="font-bright text-xl text-[#6F4E37]">3,80€</span>
-                  </div>
-                  <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
-                    Double espresso velouté versé lentement sur un nuage de lait frais et glaçons cristallins.
-                  </p>
-                </div>
-              </div>
-            </article>
+              <p class="text-sm text-[#4F3727] max-w-md">
+                Pour se réchauffer le cœur lors des matinées fraîches
+                auvergnates.
+              </p>
+            </div>
 
-            <article class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col">
-              <div class="relative h-72 rounded-[20px] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=850&q=85" alt="Croissant au beurre" class="w-full h-full object-cover"/>
-                <span class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm">Best-seller</span>
-              </div>
-              <div class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-baseline justify-between gap-3">
-                    <h3 class="font-bright text-2xl text-[#6F4E37]">Croissant au beurre</h3>
-                    <span class="font-bright text-xl text-[#6F4E37]">1,50€</span>
-                  </div>
-                  <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
-                    Feuilletage croustillant et doré au beurre fin, sorti du four chaque matin à l’ouverture.
-                  </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <article
+                class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col"
+              >
+                <div class="relative h-72 rounded-[20px] overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=850&q=85"
+                    alt="Café Macchiato"
+                    class="w-full h-full object-cover"
+                  />
+                  <span
+                    class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm"
+                    >Chaud &amp; corsé</span
+                  >
                 </div>
-              </div>
-            </article>
+                <div
+                  class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between"
+                >
+                  <div>
+                    <div class="flex items-baseline justify-between gap-3">
+                      <h3 class="font-bright text-2xl text-[#6F4E37]">
+                        Café Macchiato
+                      </h3>
+                      <span class="font-bright text-xl text-[#6F4E37]"
+                        >3,50€</span
+                      >
+                    </div>
+                    <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
+                      Un espresso corsé délicatement couronné d’une mousse de
+                      lait fine et soyeuse.
+                    </p>
+                  </div>
+                </div>
+              </article>
 
-            <article class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col">
-              <div class="relative h-72 rounded-[20px] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=850&q=85" alt="Cinnamon Roll" class="w-full h-full object-cover"/>
-                <span class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm">Best-seller</span>
-              </div>
-              <div class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-baseline justify-between gap-3">
-                    <h3 class="font-bright text-2xl text-[#6F4E37]">Cinnamon Roll</h3>
-                    <span class="font-bright text-xl text-[#6F4E37]">3,50€</span>
-                  </div>
-                  <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
-                    Brioche roulée moelleuse parfumée à la cannelle douce et nappée d’un glaçage vanille léger.
-                  </p>
+              <article
+                class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col"
+              >
+                <div class="relative h-72 rounded-[20px] overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=850&q=85"
+                    alt="Latte Macchiato"
+                    class="w-full h-full object-cover"
+                  />
+                  <span
+                    class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm"
+                    >Onctueux</span
+                  >
                 </div>
+                <div
+                  class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between"
+                >
+                  <div>
+                    <div class="flex items-baseline justify-between gap-3">
+                      <h3 class="font-bright text-2xl text-[#6F4E37]">
+                        Latte Macchiato
+                      </h3>
+                      <span class="font-bright text-xl text-[#6F4E37]"
+                        >3,50€</span
+                      >
+                    </div>
+                    <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
+                      Lait chaud velouté, espresso arabica et nuage de mousse
+                      aérienne.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col"
+              >
+                <div class="relative h-72 rounded-[20px] overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=850&q=85"
+                    alt="Chocolat Chaud"
+                    class="w-full h-full object-cover"
+                  />
+                  <span
+                    class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm"
+                    >Gourmand</span
+                  >
+                </div>
+                <div
+                  class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between"
+                >
+                  <div>
+                    <div class="flex items-baseline justify-between gap-3">
+                      <h3 class="font-bright text-2xl text-[#6F4E37]">
+                        Chocolat Chaud
+                      </h3>
+                      <span class="font-bright text-xl text-[#6F4E37]"
+                        >3,00€</span
+                      >
+                    </div>
+                    <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
+                      Véritable chocolat noir fondu dans du lait entier
+                      onctueux, doux et réconfortant.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- C. LES FRAÎCHES GOURMANDES (Même design unifié) -->
+          <div class="reveal">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4"
+            >
+              <div>
+                <p
+                  class="text-xs uppercase tracking-[0.22em] font-semibold text-[#8C715F] mb-2"
+                >
+                  Les boissons glacées
+                </p>
+                <h2 class="font-bright text-3xl sm:text-5xl text-[#6F4E37]">
+                  Les Fraîches Gourmandes
+                </h2>
               </div>
-            </article>
+              <p class="text-sm text-[#4F3727] max-w-md">
+                Des créations fraîches, glacées et colorées à savourer à tout
+                moment.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <article
+                class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col"
+              >
+                <div class="relative h-72 rounded-[20px] overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=850&q=85"
+                    alt="Iced Latte"
+                    class="w-full h-full object-cover"
+                  />
+                  <span
+                    class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm"
+                    >Glacé</span
+                  >
+                </div>
+                <div
+                  class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between"
+                >
+                  <div>
+                    <div class="flex items-baseline justify-between gap-3">
+                      <h3 class="font-bright text-2xl text-[#6F4E37]">
+                        Iced Latte
+                      </h3>
+                      <span class="font-bright text-xl text-[#6F4E37]"
+                        >3,80€</span
+                      >
+                    </div>
+                    <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
+                      L’équilibre parfait entre un double espresso intense et la
+                      douceur du lait glacé.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col"
+              >
+                <div class="relative h-72 rounded-[20px] overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=850&q=85"
+                    alt="Iced Matcha"
+                    class="w-full h-full object-cover"
+                  />
+                  <span
+                    class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm"
+                    >Matcha</span
+                  >
+                </div>
+                <div
+                  class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between"
+                >
+                  <div>
+                    <div class="flex items-baseline justify-between gap-3">
+                      <h3 class="font-bright text-2xl text-[#6F4E37]">
+                        Iced Matcha
+                      </h3>
+                      <span class="font-bright text-xl text-[#6F4E37]"
+                        >3,80€</span
+                      >
+                    </div>
+                    <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
+                      Thé vert matcha cérémonial fouetté à la main, lait frais
+                      et note subtile de vanille.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col"
+              >
+                <div class="relative h-72 rounded-[20px] overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=850&q=85"
+                    alt="Chai Tea Latte"
+                    class="w-full h-full object-cover"
+                  />
+                  <span
+                    class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm"
+                    >Épicé</span
+                  >
+                </div>
+                <div
+                  class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between"
+                >
+                  <div>
+                    <div class="flex items-baseline justify-between gap-3">
+                      <h3 class="font-bright text-2xl text-[#6F4E37]">
+                        Chai Tea Latte
+                      </h3>
+                      <span class="font-bright text-xl text-[#6F4E37]"
+                        >3,80€</span
+                      >
+                    </div>
+                    <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
+                      Infusion d’épices douces (cannelle, cardamome, gingembre)
+                      et lait velouté sur glace.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
+      </section>
 
-        <!-- B. LES DOUCEURS RÉCONFORTANTES (Même design unifié) -->
-        <div class="reveal">
-          <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-            <div>
-              <p class="text-xs uppercase tracking-[0.22em] font-semibold text-[#8C715F] mb-2">Les boissons chaudes</p>
-              <h2 class="font-bright text-3xl sm:text-5xl text-[#6F4E37]">Les Douceurs Réconfortantes</h2>
-            </div>
-            <p class="text-sm text-[#4F3727] max-w-md">
-              Pour se réchauffer le cœur lors des matinées fraîches auvergnates.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <article class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col">
-              <div class="relative h-72 rounded-[20px] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=850&q=85" alt="Café Macchiato" class="w-full h-full object-cover"/>
-                <span class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm">Chaud &amp; corsé</span>
-              </div>
-              <div class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-baseline justify-between gap-3">
-                    <h3 class="font-bright text-2xl text-[#6F4E37]">Café Macchiato</h3>
-                    <span class="font-bright text-xl text-[#6F4E37]">3,50€</span>
-                  </div>
-                  <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
-                    Un espresso corsé délicatement couronné d’une mousse de lait fine et soyeuse.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col">
-              <div class="relative h-72 rounded-[20px] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=850&q=85" alt="Latte Macchiato" class="w-full h-full object-cover"/>
-                <span class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm">Onctueux</span>
-              </div>
-              <div class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-baseline justify-between gap-3">
-                    <h3 class="font-bright text-2xl text-[#6F4E37]">Latte Macchiato</h3>
-                    <span class="font-bright text-xl text-[#6F4E37]">3,50€</span>
-                  </div>
-                  <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
-                    Lait chaud velouté, espresso arabica et nuage de mousse aérienne.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col">
-              <div class="relative h-72 rounded-[20px] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=850&q=85" alt="Chocolat Chaud" class="w-full h-full object-cover"/>
-                <span class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm">Gourmand</span>
-              </div>
-              <div class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-baseline justify-between gap-3">
-                    <h3 class="font-bright text-2xl text-[#6F4E37]">Chocolat Chaud</h3>
-                    <span class="font-bright text-xl text-[#6F4E37]">3,00€</span>
-                  </div>
-                  <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
-                    Véritable chocolat noir fondu dans du lait entier onctueux, doux et réconfortant.
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- C. LES FRAÎCHES GOURMANDES (Même design unifié) -->
-        <div class="reveal">
-          <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-            <div>
-              <p class="text-xs uppercase tracking-[0.22em] font-semibold text-[#8C715F] mb-2">Les boissons glacées</p>
-              <h2 class="font-bright text-3xl sm:text-5xl text-[#6F4E37]">Les Fraîches Gourmandes</h2>
-            </div>
-            <p class="text-sm text-[#4F3727] max-w-md">
-              Des créations fraîches, glacées et colorées à savourer à tout moment.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <article class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col">
-              <div class="relative h-72 rounded-[20px] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=850&q=85" alt="Iced Latte" class="w-full h-full object-cover"/>
-                <span class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm">Glacé</span>
-              </div>
-              <div class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-baseline justify-between gap-3">
-                    <h3 class="font-bright text-2xl text-[#6F4E37]">Iced Latte</h3>
-                    <span class="font-bright text-xl text-[#6F4E37]">3,80€</span>
-                  </div>
-                  <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
-                    L’équilibre parfait entre un double espresso intense et la douceur du lait glacé.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col">
-              <div class="relative h-72 rounded-[20px] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=850&q=85" alt="Iced Matcha" class="w-full h-full object-cover"/>
-                <span class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm">Matcha</span>
-              </div>
-              <div class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-baseline justify-between gap-3">
-                    <h3 class="font-bright text-2xl text-[#6F4E37]">Iced Matcha</h3>
-                    <span class="font-bright text-xl text-[#6F4E37]">3,80€</span>
-                  </div>
-                  <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
-                    Thé vert matcha cérémonial fouetté à la main, lait frais et note subtile de vanille.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <article class="bg-[#FFF9F5] rounded-[26px] p-4 shadow-editorial shadow-card-hover flex flex-col">
-              <div class="relative h-72 rounded-[20px] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=850&q=85" alt="Chai Tea Latte" class="w-full h-full object-cover"/>
-                <span class="absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full bg-[#FDF5F7]/95 backdrop-blur-md text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold shadow-sm">Épicé</span>
-              </div>
-              <div class="pt-5 px-2 pb-2 flex-1 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-baseline justify-between gap-3">
-                    <h3 class="font-bright text-2xl text-[#6F4E37]">Chai Tea Latte</h3>
-                    <span class="font-bright text-xl text-[#6F4E37]">3,80€</span>
-                  </div>
-                  <p class="mt-2 text-sm text-[#4F3727]/85 leading-relaxed">
-                    Infusion d’épices douces (cannelle, cardamome, gingembre) et lait velouté sur glace.
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =====================================================================
+      <!-- =====================================================================
          6. MENU COMPLET (4 colonnes avec prix exacts)
     ====================================================================== -->
-    <section id="menu" class="relative bg-[#EDAEBF]">
-      <div class="w-full overflow-hidden leading-none bg-[#EDAEBF]">
-        <svg viewBox="0 0 1440 72" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-10 sm:h-16 block" preserveAspectRatio="none">
-          <path d="M0 0H1440V26C1180 74 920 6 720 38C520 70 260 10 0 48V0Z" fill="#F1EDEB"/>
-        </svg>
-      </div>
-
-      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16 sm:py-24">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
-          
-          <div class="lg:col-span-7 reveal">
-            <div class="relative bg-[#8C715F] p-3.5 sm:p-5 rounded-[30px] shadow-editorial">
-              <div class="w-24 h-4 mx-auto -mt-5 mb-2.5 rounded-t-xl bg-[#4F3727] flex items-center justify-center">
-                <div class="w-2 h-2 rounded-full bg-[#FFF9F5]"></div>
-              </div>
-
-              <div class="bg-[#FDF5F7] rounded-[22px] p-7 sm:p-11 border border-[#6F4E37]/15">
-                <div class="text-center border-b border-[#6F4E37]/15 pb-6 mb-8">
-                  <p class="text-[10px] uppercase tracking-[0.28em] text-[#8C715F] font-semibold mb-1.5">Le Petit Café • Le Puy-en-Velay</p>
-                  <h3 class="font-bright text-4xl sm:text-5xl text-[#212117] tracking-tight">MENU</h3>
-                  <p class="text-xs text-[#6F4E37]/80 mt-2">Lait d’avoine ou d’amande disponible sur demande</p>
-                </div>
-
-                <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-9">
-                  
-                  <div class="menu-category" data-category="Cafés">
-                    <h4 class="font-bright text-xl text-[#6F4E37] mb-4 pb-1.5 border-b border-[#F4D0DA]">Cafés</h4>
-                    <ul class="space-y-2.5 text-sm">
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Espresso</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">1,50€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Allongé</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">1,80€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Noisette</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">1,80€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Café crème</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">2,20€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Cappuccino</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">3,00€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Latte macchiato</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">3,50€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Chocolat chaud</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">3,00€</span></li>
-                    </ul>
-                  </div>
-
-                  <div class="menu-category" data-category="Douceurs">
-                    <h4 class="font-bright text-xl text-[#6F4E37] mb-4 pb-1.5 border-b border-[#F4D0DA]">Douceurs</h4>
-                    <ul class="space-y-2.5 text-sm">
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Croissant</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">1,50€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Pain au chocolat</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">1,80€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Cookie</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">2,00€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Tarte maison</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">3,50€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Cake</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">3,00€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Cinnamon Roll</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">3,50€</span></li>
-                    </ul>
-                  </div>
-
-                  <div class="menu-category" data-category="Boissons">
-                    <h4 class="font-bright text-xl text-[#6F4E37] mb-4 pb-1.5 border-b border-[#F4D0DA]">Boissons</h4>
-                    <ul class="space-y-2.5 text-sm">
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Iced latte</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">3,80€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Iced matcha</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">3,80€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Chai tea latte</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">3,80€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Thé glacé</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">3,00€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Smoothie</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">3,95€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Jus d’orange</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">3,95€</span></li>
-                    </ul>
-                  </div>
-
-                  <div class="menu-category" data-category="Thés">
-                    <h4 class="font-bright text-xl text-[#6F4E37] mb-4 pb-1.5 border-b border-[#F4D0DA]">Thés</h4>
-                    <ul class="space-y-2.5 text-sm">
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Thé noir</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">2,50€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Thé vert</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">2,50€</span></li>
-                      <li class="flex items-baseline"><span class="font-medium text-[#212117]">Thé aux fruits</span><span class="menu-dots"></span><span class="font-semibold text-[#6F4E37]">2,50€</span></li>
-                    </ul>
-                  </div>
-
-                </div>
-
-                <div class="mt-9 pt-5 border-t border-[#6F4E37]/15 flex items-center justify-between gap-4">
-                  <div class="text-[11px] text-[#6F4E37] space-y-0.5">
-                    <p class="font-semibold">12 rue des Rêves, Le Puy-en-Velay</p>
-                    <p class="text-[#8C715F]">06 38 23 15 90 • @lepetitcafe</p>
-                  </div>
-
-                  <div class="w-16 h-16 shrink-0 opacity-85" title="Mascotte Le Petit Café">
-                    <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sceau gravure croissant rétro">
-                      <circle cx="50" cy="50" r="46" stroke="#212117" stroke-width="1" stroke-dasharray="3 2"/>
-                      <path d="M24 58 C19 47, 29 30, 50 30 C71 30, 81 47, 76 58 C72 64, 64 64, 61 59 C57 65, 43 65, 39 59 C36 64, 28 64, 24 58 Z" stroke="#212117" stroke-width="1.6" stroke-linejoin="round"/>
-                      <path d="M38 33 Q35 46 39 59" stroke="#212117" stroke-width="1.4" stroke-linecap="round"/>
-                      <path d="M62 33 Q65 46 61 59" stroke="#212117" stroke-width="1.4" stroke-linecap="round"/>
-                      <circle cx="45.5" cy="46" r="1.5" fill="#212117"/>
-                      <circle cx="54.5" cy="46" r="1.5" fill="#212117"/>
-                      <path d="M46 51 Q50 54.5 54 51" stroke="#212117" stroke-width="1.4" stroke-linecap="round"/>
-                      <path d="M73 48 Q83 40 81 31" stroke="#212117" stroke-width="1.4" stroke-linecap="round"/>
-                      <circle cx="81" cy="30" r="2.5" stroke="#212117" stroke-width="1.3"/>
-                      <path d="M42 64 L40 76 H35" stroke="#212117" stroke-width="1.4" stroke-linecap="round"/>
-                      <path d="M58 64 L60 76 H65" stroke="#212117" stroke-width="1.4" stroke-linecap="round"/>
-                    </svg>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div id="brunch" class="lg:col-span-5 text-white reveal lg:sticky lg:top-28">
-            <p class="text-xs uppercase tracking-[0.22em] font-semibold text-[#FFF9F5]/90 mb-3">La carte du jour</p>
-            <h2 class="font-bright text-4xl sm:text-5xl text-white leading-[1.08]">
-              Nos petites <br /><span>douceurs.</span>
-            </h2>
-            <p class="mt-5 text-base text-[#FFF9F5]/95 leading-relaxed">
-              Une carte courte, sincère et gourmande. Chaque boisson est préparée à la commande et nos pâtisseries sont façonnées chaque matin sur place.
-            </p>
-
-            <div class="mt-8">
-              <p class="text-[11px] uppercase tracking-[0.18em] font-semibold text-[#FFF9F5]/85 mb-3">Filtrer par catégorie :</p>
-              <div class="flex flex-wrap gap-2" role="tablist">
-                <button type="button" data-tab="all" class="menu-tab active px-4 py-2 rounded-full bg-[#6F4E37] text-white text-xs uppercase tracking-[0.12em] font-semibold transition-all">
-                  Tout
-                </button>
-                <button type="button" data-tab="Cafés" class="menu-tab px-4 py-2 rounded-full bg-[#FDF5F7] text-[#6F4E37] hover:bg-[#F8E0E6] text-xs uppercase tracking-[0.12em] font-semibold transition-all">
-                  Cafés
-                </button>
-                <button type="button" data-tab="Douceurs" class="menu-tab px-4 py-2 rounded-full bg-[#FDF5F7] text-[#6F4E37] hover:bg-[#F8E0E6] text-xs uppercase tracking-[0.12em] font-semibold transition-all">
-                  Douceurs
-                </button>
-                <button type="button" data-tab="Boissons" class="menu-tab px-4 py-2 rounded-full bg-[#FDF5F7] text-[#6F4E37] hover:bg-[#F8E0E6] text-xs uppercase tracking-[0.12em] font-semibold transition-all">
-                  Boissons
-                </button>
-                <button type="button" data-tab="Thés" class="menu-tab px-4 py-2 rounded-full bg-[#FDF5F7] text-[#6F4E37] hover:bg-[#F8E0E6] text-xs uppercase tracking-[0.12em] font-semibold transition-all">
-                  Thés
-                </button>
-              </div>
-            </div>
-
-            <div class="mt-9 p-7 rounded-[26px] bg-[#FFF9F5] text-[#212117] shadow-editorial">
-              <div class="flex items-center justify-between gap-2 mb-3">
-                <span class="px-3 py-1 rounded-full bg-[#F8E0E6] text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold">Sam &amp; Dim • 9h – 15h</span>
-                <span class="text-xs font-semibold text-[#8C715F]">Formule Week-end</span>
-              </div>
-              <h3 class="font-bright text-2xl text-[#6F4E37]">Le Brunch du Petit Café</h3>
-              <p class="mt-2.5 text-sm text-[#4F3727]/90 leading-relaxed">
-                Boisson chaude signature au choix, jus d’orange pressé minute, croissant au beurre doré, tartine salée de saison &amp; douceur maison du comptoir.
-              </p>
-              <button type="button" id="open-brunch-modal" class="mt-6 w-full py-3.5 px-6 rounded-full bg-[#6F4E37] hover:bg-[#4F3727] text-white text-xs uppercase tracking-[0.15em] font-semibold transition-all duration-300">
-                Réserver une table brunch
-              </button>
-            </div>
-          </div>
-
+      <section id="menu" class="relative bg-[#EDAEBF]">
+        <div class="w-full overflow-hidden leading-none bg-[#EDAEBF]">
+          <svg
+            viewBox="0 0 1440 72"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-full h-10 sm:h-16 block"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0 0H1440V26C1180 74 920 6 720 38C520 70 260 10 0 48V0Z"
+              fill="#F1EDEB"
+            />
+          </svg>
         </div>
-      </div>
 
-      <div class="w-full overflow-hidden leading-none bg-[#F1EDEB]">
-        <svg viewBox="0 0 1440 72" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-10 sm:h-16 block" preserveAspectRatio="none">
-          <path d="M0 0H1440V42C1200 10 960 72 720 38C480 4 240 68 0 30V0Z" fill="#EDAEBF"/>
-        </svg>
-      </div>
-    </section>
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16 sm:py-24">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start"
+          >
+            <div class="lg:col-span-7 reveal">
+              <div
+                class="relative bg-[#8C715F] p-3.5 sm:p-5 rounded-[30px] shadow-editorial"
+              >
+                <div
+                  class="w-24 h-4 mx-auto -mt-5 mb-2.5 rounded-t-xl bg-[#4F3727] flex items-center justify-center"
+                >
+                  <div class="w-2 h-2 rounded-full bg-[#FFF9F5]"></div>
+                </div>
 
-    <!-- =====================================================================
+                <div
+                  class="bg-[#FDF5F7] rounded-[22px] p-7 sm:p-11 border border-[#6F4E37]/15"
+                >
+                  <div
+                    class="text-center border-b border-[#6F4E37]/15 pb-6 mb-8"
+                  >
+                    <p
+                      class="text-[10px] uppercase tracking-[0.28em] text-[#8C715F] font-semibold mb-1.5"
+                    >
+                      Le Petit Café • Le Puy-en-Velay
+                    </p>
+                    <h3
+                      class="font-bright text-4xl sm:text-5xl text-[#212117] tracking-tight"
+                    >
+                      MENU
+                    </h3>
+                    <p class="text-xs text-[#6F4E37]/80 mt-2">
+                      Lait d’avoine ou d’amande disponible sur demande
+                    </p>
+                  </div>
+
+                  <div
+                    id="menu-grid"
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-9"
+                  >
+                    <div class="menu-category" data-category="Cafés">
+                      <h4
+                        class="font-bright text-xl text-[#6F4E37] mb-4 pb-1.5 border-b border-[#F4D0DA]"
+                      >
+                        Cafés
+                      </h4>
+                      <ul class="space-y-2.5 text-sm">
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Espresso</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >1,50€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]">Allongé</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >1,80€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Noisette</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >1,80€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Café crème</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >2,20€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Cappuccino</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,00€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Latte macchiato</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,50€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Chocolat chaud</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,00€</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="menu-category" data-category="Douceurs">
+                      <h4
+                        class="font-bright text-xl text-[#6F4E37] mb-4 pb-1.5 border-b border-[#F4D0DA]"
+                      >
+                        Douceurs
+                      </h4>
+                      <ul class="space-y-2.5 text-sm">
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Croissant</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >1,50€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Pain au chocolat</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >1,80€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]">Cookie</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >2,00€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Tarte maison</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,50€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]">Cake</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,00€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Cinnamon Roll</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,50€</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="menu-category" data-category="Boissons">
+                      <h4
+                        class="font-bright text-xl text-[#6F4E37] mb-4 pb-1.5 border-b border-[#F4D0DA]"
+                      >
+                        Boissons
+                      </h4>
+                      <ul class="space-y-2.5 text-sm">
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Iced latte</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,80€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Iced matcha</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,80€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Chai tea latte</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,80€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Thé glacé</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,00€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Smoothie</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,95€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Jus d’orange</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,95€</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="menu-category" data-category="Thés">
+                      <h4
+                        class="font-bright text-xl text-[#6F4E37] mb-4 pb-1.5 border-b border-[#F4D0DA]"
+                      >
+                        Thés
+                      </h4>
+                      <ul class="space-y-2.5 text-sm">
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Thé noir</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >2,50€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Thé vert</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >2,50€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Thé aux fruits</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >2,50€</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div
+                    class="mt-9 pt-5 border-t border-[#6F4E37]/15 flex items-center justify-between gap-4"
+                  >
+                    <div class="text-[11px] text-[#6F4E37] space-y-0.5">
+                      <p class="font-semibold">
+                        12 rue des Rêves, Le Puy-en-Velay
+                      </p>
+                      <p class="text-[#8C715F]">
+                        06 38 23 15 90 • @lepetitcafe
+                      </p>
+                    </div>
+
+                    <div
+                      class="w-16 h-16 shrink-0 opacity-85"
+                      title="Mascotte Le Petit Café"
+                    >
+                      <svg
+                        viewBox="0 0 100 100"
+                        class="w-full h-full"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Sceau gravure croissant rétro"
+                      >
+                        <circle
+                          cx="50"
+                          cy="50"
+                          r="46"
+                          stroke="#212117"
+                          stroke-width="1"
+                          stroke-dasharray="3 2"
+                        />
+                        <path
+                          d="M24 58 C19 47, 29 30, 50 30 C71 30, 81 47, 76 58 C72 64, 64 64, 61 59 C57 65, 43 65, 39 59 C36 64, 28 64, 24 58 Z"
+                          stroke="#212117"
+                          stroke-width="1.6"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M38 33 Q35 46 39 59"
+                          stroke="#212117"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M62 33 Q65 46 61 59"
+                          stroke="#212117"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                        />
+                        <circle cx="45.5" cy="46" r="1.5" fill="#212117" />
+                        <circle cx="54.5" cy="46" r="1.5" fill="#212117" />
+                        <path
+                          d="M46 51 Q50 54.5 54 51"
+                          stroke="#212117"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M73 48 Q83 40 81 31"
+                          stroke="#212117"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                        />
+                        <circle
+                          cx="81"
+                          cy="30"
+                          r="2.5"
+                          stroke="#212117"
+                          stroke-width="1.3"
+                        />
+                        <path
+                          d="M42 64 L40 76 H35"
+                          stroke="#212117"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M58 64 L60 76 H65"
+                          stroke="#212117"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="brunch"
+              class="lg:col-span-5 text-white reveal lg:sticky lg:top-28"
+            >
+              <p
+                class="text-xs uppercase tracking-[0.22em] font-semibold text-[#FFF9F5]/90 mb-3"
+              >
+                La carte du jour
+              </p>
+              <h2
+                class="font-bright text-4xl sm:text-5xl text-white leading-[1.08]"
+              >
+                Nos petites <br /><span>douceurs.</span>
+              </h2>
+              <p class="mt-5 text-base text-[#FFF9F5]/95 leading-relaxed">
+                Une carte courte, sincère et gourmande. Chaque boisson est
+                préparée à la commande et nos pâtisseries sont façonnées chaque
+                matin sur place.
+              </p>
+
+              <div class="mt-8">
+                <p
+                  class="text-[11px] uppercase tracking-[0.18em] font-semibold text-[#FFF9F5]/85 mb-3"
+                >
+                  Filtrer par catégorie :
+                </p>
+                <div class="flex flex-wrap gap-2" role="tablist">
+                  <button
+                    type="button"
+                    data-tab="all"
+                    class="menu-tab active px-4 py-2 rounded-full bg-[#6F4E37] text-white text-xs uppercase tracking-[0.12em] font-semibold transition-all"
+                  >
+                    Tout
+                  </button>
+                  <button
+                    type="button"
+                    data-tab="Cafés"
+                    class="menu-tab px-4 py-2 rounded-full bg-[#FDF5F7] text-[#6F4E37] hover:bg-[#F8E0E6] text-xs uppercase tracking-[0.12em] font-semibold transition-all"
+                  >
+                    Cafés
+                  </button>
+                  <button
+                    type="button"
+                    data-tab="Douceurs"
+                    class="menu-tab px-4 py-2 rounded-full bg-[#FDF5F7] text-[#6F4E37] hover:bg-[#F8E0E6] text-xs uppercase tracking-[0.12em] font-semibold transition-all"
+                  >
+                    Douceurs
+                  </button>
+                  <button
+                    type="button"
+                    data-tab="Boissons"
+                    class="menu-tab px-4 py-2 rounded-full bg-[#FDF5F7] text-[#6F4E37] hover:bg-[#F8E0E6] text-xs uppercase tracking-[0.12em] font-semibold transition-all"
+                  >
+                    Boissons
+                  </button>
+                  <button
+                    type="button"
+                    data-tab="Thés"
+                    class="menu-tab px-4 py-2 rounded-full bg-[#FDF5F7] text-[#6F4E37] hover:bg-[#F8E0E6] text-xs uppercase tracking-[0.12em] font-semibold transition-all"
+                  >
+                    Thés
+                  </button>
+                </div>
+              </div>
+
+              <div
+                class="mt-9 p-7 rounded-[26px] bg-[#FFF9F5] text-[#212117] shadow-editorial"
+              >
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span
+                    class="px-3 py-1 rounded-full bg-[#F8E0E6] text-[#6F4E37] text-[11px] uppercase tracking-[0.14em] font-semibold"
+                    >Sam &amp; Dim • 9h – 15h</span
+                  >
+                  <span class="text-xs font-semibold text-[#8C715F]"
+                    >Formule Week-end</span
+                  >
+                </div>
+                <h3 class="font-bright text-2xl text-[#6F4E37]">
+                  Le Brunch du Petit Café
+                </h3>
+                <p class="mt-2.5 text-sm text-[#4F3727]/90 leading-relaxed">
+                  Boisson chaude signature au choix, jus d’orange pressé minute,
+                  croissant au beurre doré, tartine salée de saison &amp;
+                  douceur maison du comptoir.
+                </p>
+                <button
+                  type="button"
+                  id="open-brunch-modal"
+                  class="mt-6 w-full py-3.5 px-6 rounded-full bg-[#6F4E37] hover:bg-[#4F3727] text-white text-xs uppercase tracking-[0.15em] font-semibold transition-all duration-300"
+                >
+                  Réserver une table brunch
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full overflow-hidden leading-none bg-[#F1EDEB]">
+          <svg
+            viewBox="0 0 1440 72"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-full h-10 sm:h-16 block"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0 0H1440V42C1200 10 960 72 720 38C480 4 240 68 0 30V0Z"
+              fill="#EDAEBF"
+            />
+          </svg>
+        </div>
+      </section>
+
+      <!-- =====================================================================
          7. GALERIE / AMBIANCE
     ====================================================================== -->
-    <section id="galerie" class="py-20 sm:py-28 bg-[#F1EDEB]">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
-          <p class="text-xs uppercase tracking-[0.22em] font-semibold text-[#8C715F] mb-2">Instants choisis</p>
-          <h2 class="font-bright text-3xl sm:text-5xl text-[#6F4E37]">
-            Une pause, un moment, <span class="italic font-normal">un souvenir.</span>
-          </h2>
+      <section id="galerie" class="py-20 sm:py-28 bg-[#F1EDEB]">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+          <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+            <p
+              class="text-xs uppercase tracking-[0.22em] font-semibold text-[#8C715F] mb-2"
+            >
+              Instants choisis
+            </p>
+            <h2 class="font-bright text-3xl sm:text-5xl text-[#6F4E37]">
+              Une pause, un moment,
+              <span class="italic font-normal">un souvenir.</span>
+            </h2>
+          </div>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-5 reveal"
+          >
+            <button
+              type="button"
+              class="gallery-item lg:col-span-5 group relative h-80 rounded-[24px] overflow-hidden shadow-editorial text-left focus:outline-none"
+              data-caption="Matin doux au Petit Café : latte art, croissant feuilleté et carnet de lecture"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
+                alt="Table en bois avec tasse de latte art et viennoiserie"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#212117]/70 via-transparent to-transparent"
+              ></div>
+              <span
+                class="absolute bottom-5 left-5 text-white text-xs uppercase tracking-[0.16em] font-semibold"
+                >Pause café &amp; carnet</span
+              >
+            </button>
+
+            <button
+              type="button"
+              class="gallery-item lg:col-span-4 group relative h-80 rounded-[24px] overflow-hidden shadow-editorial text-left focus:outline-none"
+              data-caption="Notre terrasse lumineuse aux nuances rose poudré"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=800&q=85"
+                alt="Terrasse cosy de café"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#212117]/70 via-transparent to-transparent"
+              ></div>
+              <span
+                class="absolute bottom-5 left-5 text-white text-xs uppercase tracking-[0.16em] font-semibold"
+                >Terrasse ensoleillée</span
+              >
+            </button>
+
+            <button
+              type="button"
+              class="gallery-item lg:col-span-3 group relative h-80 rounded-[24px] overflow-hidden shadow-editorial text-left focus:outline-none"
+              data-caption="Nos recettes glacées : Iced Matcha & Iced Latte"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=700&q=85"
+                alt="Boissons glacées iced matcha et latte"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#212117]/70 via-transparent to-transparent"
+              ></div>
+              <span
+                class="absolute bottom-5 left-5 text-white text-xs uppercase tracking-[0.16em] font-semibold"
+                >Iced Matcha &amp; Latte</span
+              >
+            </button>
+
+            <button
+              type="button"
+              class="gallery-item lg:col-span-4 group relative h-72 rounded-[24px] overflow-hidden shadow-editorial text-left focus:outline-none"
+              data-caption="Le comptoir du Petit Café : pâtisseries maison préparées chaque matin"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=85"
+                alt="Intérieur et comptoir du café"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#212117]/70 via-transparent to-transparent"
+              ></div>
+              <span
+                class="absolute bottom-5 left-5 text-white text-xs uppercase tracking-[0.16em] font-semibold"
+                >Le comptoir gourmand</span
+              >
+            </button>
+
+            <button
+              type="button"
+              class="gallery-item lg:col-span-4 group relative h-72 rounded-[24px] overflow-hidden shadow-editorial text-left focus:outline-none"
+              data-caption="L’heure du goûter : part de cake maison et lecture au calme"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=800&q=85"
+                alt="Part de gâteau maison et café"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#212117]/70 via-transparent to-transparent"
+              ></div>
+              <span
+                class="absolute bottom-5 left-5 text-white text-xs uppercase tracking-[0.16em] font-semibold"
+                >Douceurs de l’après-midi</span
+              >
+            </button>
+
+            <button
+              type="button"
+              class="gallery-item lg:col-span-4 group relative h-72 rounded-[24px] overflow-hidden shadow-editorial text-left focus:outline-none"
+              data-caption="À savourer sur place ou à emporter dans les ruelles du Puy-en-Velay"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=800&q=85"
+                alt="Cafés à emporter"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#212117]/70 via-transparent to-transparent"
+              ></div>
+              <span
+                class="absolute bottom-5 left-5 text-white text-xs uppercase tracking-[0.16em] font-semibold"
+                >Sur place &amp; à emporter</span
+              >
+            </button>
+          </div>
         </div>
+      </section>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-5 reveal">
-          <button type="button" class="gallery-item lg:col-span-5 group relative h-80 rounded-[24px] overflow-hidden shadow-editorial text-left focus:outline-none" data-caption="Matin doux au Petit Café : latte art, croissant feuilleté et carnet de lecture">
-            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85" alt="Table en bois avec tasse de latte art et viennoiserie" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#212117]/70 via-transparent to-transparent"></div>
-            <span class="absolute bottom-5 left-5 text-white text-xs uppercase tracking-[0.16em] font-semibold">Pause café &amp; carnet</span>
-          </button>
-
-          <button type="button" class="gallery-item lg:col-span-4 group relative h-80 rounded-[24px] overflow-hidden shadow-editorial text-left focus:outline-none" data-caption="Notre terrasse lumineuse aux nuances rose poudré">
-            <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=800&q=85" alt="Terrasse cosy de café" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#212117]/70 via-transparent to-transparent"></div>
-            <span class="absolute bottom-5 left-5 text-white text-xs uppercase tracking-[0.16em] font-semibold">Terrasse ensoleillée</span>
-          </button>
-
-          <button type="button" class="gallery-item lg:col-span-3 group relative h-80 rounded-[24px] overflow-hidden shadow-editorial text-left focus:outline-none" data-caption="Nos recettes glacées : Iced Matcha & Iced Latte">
-            <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=700&q=85" alt="Boissons glacées iced matcha et latte" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#212117]/70 via-transparent to-transparent"></div>
-            <span class="absolute bottom-5 left-5 text-white text-xs uppercase tracking-[0.16em] font-semibold">Iced Matcha &amp; Latte</span>
-          </button>
-
-          <button type="button" class="gallery-item lg:col-span-4 group relative h-72 rounded-[24px] overflow-hidden shadow-editorial text-left focus:outline-none" data-caption="Le comptoir du Petit Café : pâtisseries maison préparées chaque matin">
-            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=85" alt="Intérieur et comptoir du café" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#212117]/70 via-transparent to-transparent"></div>
-            <span class="absolute bottom-5 left-5 text-white text-xs uppercase tracking-[0.16em] font-semibold">Le comptoir gourmand</span>
-          </button>
-
-          <button type="button" class="gallery-item lg:col-span-4 group relative h-72 rounded-[24px] overflow-hidden shadow-editorial text-left focus:outline-none" data-caption="L’heure du goûter : part de cake maison et lecture au calme">
-            <img src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=800&q=85" alt="Part de gâteau maison et café" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#212117]/70 via-transparent to-transparent"></div>
-            <span class="absolute bottom-5 left-5 text-white text-xs uppercase tracking-[0.16em] font-semibold">Douceurs de l’après-midi</span>
-          </button>
-
-          <button type="button" class="gallery-item lg:col-span-4 group relative h-72 rounded-[24px] overflow-hidden shadow-editorial text-left focus:outline-none" data-caption="À savourer sur place ou à emporter dans les ruelles du Puy-en-Velay">
-            <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=800&q=85" alt="Cafés à emporter" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#212117]/70 via-transparent to-transparent"></div>
-            <span class="absolute bottom-5 left-5 text-white text-xs uppercase tracking-[0.16em] font-semibold">Sur place &amp; à emporter</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================================
+      <!-- =====================================================================
          8. INFOS PRATIQUES / NOUS TROUVER
     ====================================================================== -->
-    <section id="trouver" class="py-20 sm:py-28 bg-[#FDF5F7] border-t border-[#6F4E37]/10">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-          <p class="text-xs uppercase tracking-[0.22em] font-semibold text-[#8C715F] mb-2">Nous rendre visite</p>
-          <h2 class="font-bright text-3xl sm:text-5xl text-[#6F4E37]">Nous trouver</h2>
-          <p class="mt-3 text-[#4F3727] text-base">
-            Au cœur du Puy-en-Velay, pousse la porte rose poudré. Ta table est prête.
-          </p>
-        </div>
+      <section
+        id="trouver"
+        class="py-20 sm:py-28 bg-[#FDF5F7] border-t border-[#6F4E37]/10"
+      >
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+          <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+            <p
+              class="text-xs uppercase tracking-[0.22em] font-semibold text-[#8C715F] mb-2"
+            >
+              Nous rendre visite
+            </p>
+            <h2 class="font-bright text-3xl sm:text-5xl text-[#6F4E37]">
+              Nous trouver
+            </h2>
+            <p class="mt-3 text-[#4F3727] text-base">
+              Au cœur du Puy-en-Velay, pousse la porte rose poudré. Ta table est
+              prête.
+            </p>
+          </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch reveal">
-          
-          <div class="lg:col-span-5 bg-[#FFF9F5] rounded-[28px] p-8 sm:p-10 border border-[#6F4E37]/10 shadow-editorial flex flex-col justify-between">
-            <div class="space-y-7">
-              <div>
-                <p class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#8C715F] mb-1.5">Adresse</p>
-                <p class="font-bright text-xl text-[#6F4E37]">12 rue des Rêves</p>
-                <p class="text-sm text-[#4F3727]">43000 Le Puy-en-Velay</p>
-              </div>
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch reveal"
+          >
+            <div
+              class="lg:col-span-5 bg-[#FFF9F5] rounded-[28px] p-8 sm:p-10 border border-[#6F4E37]/10 shadow-editorial flex flex-col justify-between"
+            >
+              <div class="space-y-7">
+                <div>
+                  <p
+                    class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#8C715F] mb-1.5"
+                  >
+                    Adresse
+                  </p>
+                  <p class="font-bright text-xl text-[#6F4E37]">
+                    12 rue des Rêves
+                  </p>
+                  <p class="text-sm text-[#4F3727]">43000 Le Puy-en-Velay</p>
+                </div>
 
-              <div class="pt-6 border-t border-[#6F4E37]/10">
-                <p class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#8C715F] mb-2">Horaires d’ouverture</p>
-                <div class="space-y-1.5 text-sm">
-                  <div class="flex justify-between">
-                    <span class="text-[#212117]">Lundi – Vendredi</span>
-                    <span class="font-semibold text-[#6F4E37]">8h – 18h</span>
+                <div class="pt-6 border-t border-[#6F4E37]/10">
+                  <p
+                    class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#8C715F] mb-2"
+                  >
+                    Horaires d’ouverture
+                  </p>
+                  <div class="space-y-1.5 text-sm">
+                    <div class="flex justify-between">
+                      <span class="text-[#212117]">Lundi – Vendredi</span>
+                      <span class="font-semibold text-[#6F4E37]">8h – 18h</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-[#212117]">Samedi – Dimanche</span>
+                      <span class="font-semibold text-[#6F4E37]">9h – 19h</span>
+                    </div>
+                    <p class="text-xs text-[#A5677C] font-medium pt-1">
+                      Brunch gourmand tous les week-ends
+                    </p>
                   </div>
-                  <div class="flex justify-between items-center">
-                    <span class="text-[#212117]">Samedi – Dimanche</span>
-                    <span class="font-semibold text-[#6F4E37]">9h – 19h</span>
-                  </div>
-                  <p class="text-xs text-[#A5677C] font-medium pt-1">Brunch gourmand tous les week-ends</p>
+                </div>
+
+                <div
+                  class="pt-6 border-t border-[#6F4E37]/10 space-y-1.5 text-sm"
+                >
+                  <p
+                    class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#8C715F] mb-1.5"
+                  >
+                    Contact &amp; Réseaux
+                  </p>
+                  <p class="text-[#212117]">
+                    Téléphone :
+                    <a
+                      href="tel:0638231590"
+                      class="font-semibold text-[#6F4E37] hover:underline"
+                      >06 38 23 15 90</a
+                    >
+                  </p>
+                  <p class="text-[#212117]">
+                    Instagram :
+                    <span class="font-semibold text-[#6F4E37]"
+                      >@lepetitcafe</span
+                    >
+                  </p>
+                  <p class="text-[#212117]">
+                    Site :
+                    <span class="font-semibold text-[#6F4E37]"
+                      >www.lepetitcafe.com</span
+                    >
+                  </p>
                 </div>
               </div>
 
-              <div class="pt-6 border-t border-[#6F4E37]/10 space-y-1.5 text-sm">
-                <p class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#8C715F] mb-1.5">Contact &amp; Réseaux</p>
-                <p class="text-[#212117]">Téléphone : <a href="tel:0638231590" class="font-semibold text-[#6F4E37] hover:underline">06 38 23 15 90</a></p>
-                <p class="text-[#212117]">Instagram : <span class="font-semibold text-[#6F4E37]">@lepetitcafe</span></p>
-                <p class="text-[#212117]">Site : <span class="font-semibold text-[#6F4E37]">www.lepetitcafe.com</span></p>
+              <div
+                class="mt-9 pt-6 border-t border-[#6F4E37]/10 flex flex-col sm:flex-row gap-3"
+              >
+                <button
+                  type="button"
+                  id="open-brunch-modal-2"
+                  class="flex-1 py-3.5 px-5 rounded-full bg-[#6F4E37] hover:bg-[#4F3727] text-white text-xs uppercase tracking-[0.14em] font-semibold transition-colors"
+                >
+                  Réserver un brunch
+                </button>
+                <button
+                  type="button"
+                  id="copy-address-btn"
+                  class="py-3.5 px-5 rounded-full bg-[#F8E0E6] hover:bg-[#F4D0DA] text-[#6F4E37] text-xs uppercase tracking-[0.14em] font-semibold transition-colors"
+                >
+                  Copier l’adresse
+                </button>
               </div>
             </div>
 
-            <div class="mt-9 pt-6 border-t border-[#6F4E37]/10 flex flex-col sm:flex-row gap-3">
-              <button type="button" id="open-brunch-modal-2" class="flex-1 py-3.5 px-5 rounded-full bg-[#6F4E37] hover:bg-[#4F3727] text-white text-xs uppercase tracking-[0.14em] font-semibold transition-colors">
-                Réserver un brunch
-              </button>
-              <button type="button" id="copy-address-btn" class="py-3.5 px-5 rounded-full bg-[#F8E0E6] hover:bg-[#F4D0DA] text-[#6F4E37] text-xs uppercase tracking-[0.14em] font-semibold transition-colors">
-                Copier l’adresse
-              </button>
+            <div
+              class="lg:col-span-7 bg-[#FFF9F5] rounded-[28px] p-3 border border-[#6F4E37]/10 shadow-editorial flex flex-col"
+            >
+              <div
+                class="relative flex-1 min-h-[360px] rounded-[22px] overflow-hidden bg-[#FDF5F7]"
+              >
+                <svg
+                  viewBox="0 0 680 440"
+                  class="w-full h-full object-cover"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Plan minimaliste du Petit Café au 12 rue des Rêves, Le Puy-en-Velay"
+                >
+                  <rect width="680" height="440" fill="#FDF5F7" />
+
+                  <rect
+                    x="36"
+                    y="36"
+                    width="190"
+                    height="130"
+                    rx="16"
+                    fill="#F1EDEB"
+                  />
+                  <rect
+                    x="270"
+                    y="36"
+                    width="180"
+                    height="120"
+                    rx="16"
+                    fill="#F1EDEB"
+                  />
+                  <rect
+                    x="490"
+                    y="36"
+                    width="154"
+                    height="145"
+                    rx="16"
+                    fill="#F1EDEB"
+                  />
+                  <rect
+                    x="36"
+                    y="255"
+                    width="210"
+                    height="148"
+                    rx="16"
+                    fill="#F1EDEB"
+                  />
+                  <rect
+                    x="430"
+                    y="245"
+                    width="214"
+                    height="158"
+                    rx="16"
+                    fill="#F1EDEB"
+                  />
+
+                  <path d="M0 205 H680" stroke="#F8E0E6" stroke-width="32" />
+                  <path d="M248 0 V440" stroke="#F8E0E6" stroke-width="26" />
+                  <path d="M470 0 V440" stroke="#F8E0E6" stroke-width="22" />
+
+                  <text
+                    x="130"
+                    y="209"
+                    text-anchor="middle"
+                    font-family="Plus Jakarta Sans, sans-serif"
+                    font-weight="600"
+                    font-size="10"
+                    letter-spacing="2"
+                    fill="#8C715F"
+                  >
+                    RUE DES RÊVES
+                  </text>
+                  <text
+                    x="575"
+                    y="209"
+                    text-anchor="middle"
+                    font-family="Plus Jakarta Sans, sans-serif"
+                    font-weight="600"
+                    font-size="10"
+                    letter-spacing="2"
+                    fill="#8C715F"
+                  >
+                    PLACE DU MARCHÉ
+                  </text>
+                  <text
+                    x="131"
+                    y="102"
+                    text-anchor="middle"
+                    font-family="Georgia, serif"
+                    font-weight="600"
+                    font-size="13"
+                    fill="#9F8879"
+                  >
+                    Centre Historique
+                  </text>
+                  <text
+                    x="537"
+                    y="325"
+                    text-anchor="middle"
+                    font-family="Georgia, serif"
+                    font-weight="600"
+                    font-size="13"
+                    fill="#9F8879"
+                  >
+                    Jardin Henri Vinay
+                  </text>
+
+                  <g transform="translate(355, 195)">
+                    <circle cx="0" cy="0" r="34" fill="#EDAEBF" opacity="0.3" />
+                    <rect
+                      x="-88"
+                      y="-76"
+                      width="176"
+                      height="52"
+                      rx="14"
+                      fill="#3D2B1E"
+                    />
+                    <polygon points="-6,-24 6,-24 0,-14" fill="#3D2B1E" />
+                    <text
+                      x="0"
+                      y="-53"
+                      text-anchor="middle"
+                      font-family="Georgia, serif"
+                      font-weight="700"
+                      font-size="15"
+                      fill="#FFFFFF"
+                    >
+                      Le Petit Café
+                    </text>
+                    <text
+                      x="0"
+                      y="-36"
+                      text-anchor="middle"
+                      font-family="Plus Jakarta Sans, sans-serif"
+                      font-weight="500"
+                      font-size="10"
+                      letter-spacing="1"
+                      fill="#F8E0E6"
+                    >
+                      12 RUE DES RÊVES
+                    </text>
+                    <circle
+                      cx="0"
+                      cy="0"
+                      r="8"
+                      fill="#6F4E37"
+                      stroke="#FFFFFF"
+                      stroke-width="2.5"
+                    />
+                  </g>
+                </svg>
+              </div>
             </div>
           </div>
-
-          <div class="lg:col-span-7 bg-[#FFF9F5] rounded-[28px] p-3 border border-[#6F4E37]/10 shadow-editorial flex flex-col">
-            <div class="relative flex-1 min-h-[360px] rounded-[22px] overflow-hidden bg-[#FDF5F7]">
-              <svg viewBox="0 0 680 440" class="w-full h-full object-cover" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan minimaliste du Petit Café au 12 rue des Rêves, Le Puy-en-Velay">
-                <rect width="680" height="440" fill="#FDF5F7"/>
-                
-                <rect x="36" y="36" width="190" height="130" rx="16" fill="#F1EDEB"/>
-                <rect x="270" y="36" width="180" height="120" rx="16" fill="#F1EDEB"/>
-                <rect x="490" y="36" width="154" height="145" rx="16" fill="#F1EDEB"/>
-                <rect x="36" y="255" width="210" height="148" rx="16" fill="#F1EDEB"/>
-                <rect x="430" y="245" width="214" height="158" rx="16" fill="#F1EDEB"/>
-
-                <path d="M0 205 H680" stroke="#F8E0E6" stroke-width="32"/>
-                <path d="M248 0 V440" stroke="#F8E0E6" stroke-width="26"/>
-                <path d="M470 0 V440" stroke="#F8E0E6" stroke-width="22"/>
-
-                <text x="130" y="209" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" font-size="10" letter-spacing="2" fill="#8C715F">RUE DES RÊVES</text>
-                <text x="575" y="209" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" font-size="10" letter-spacing="2" fill="#8C715F">PLACE DU MARCHÉ</text>
-                <text x="131" y="102" text-anchor="middle" font-family="Georgia, serif" font-weight="600" font-size="13" fill="#9F8879">Centre Historique</text>
-                <text x="537" y="325" text-anchor="middle" font-family="Georgia, serif" font-weight="600" font-size="13" fill="#9F8879">Jardin Henri Vinay</text>
-
-                <g transform="translate(355, 195)">
-                  <circle cx="0" cy="0" r="34" fill="#EDAEBF" opacity="0.3"/>
-                  <rect x="-88" y="-76" width="176" height="52" rx="14" fill="#3D2B1E"/>
-                  <polygon points="-6,-24 6,-24 0,-14" fill="#3D2B1E"/>
-                  <text x="0" y="-53" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="15" fill="#FFFFFF">Le Petit Café</text>
-                  <text x="0" y="-36" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="500" font-size="10" letter-spacing="1" fill="#F8E0E6">12 RUE DES RÊVES</text>
-                  <circle cx="0" cy="0" r="8" fill="#6F4E37" stroke="#FFFFFF" stroke-width="2.5"/>
-                </g>
-              </svg>
-            </div>
-          </div>
-
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-  </main>
-
-  <!-- =====================================================================
+    <!-- =====================================================================
        9. FOOTER
     ====================================================================== -->
-  <footer class="bg-[#3D2B1E] text-[#F8E0E6] pt-16 pb-12">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#F8E0E6]/12 items-center">
-        
-        <div class="md:col-span-5 space-y-4">
-          <div class="flex items-center gap-3.5">
-            <div class="w-10 h-10 rounded-full bg-[#6F4E37] border border-[#F8E0E6]/20 flex items-center justify-center">
-              <svg class="w-5 h-5" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13 9.5C13 7.8 14.5 7 14.5 5.2" stroke="#F8E0E6" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M18.5 9.5C18.5 7.8 20 7 20 5.2" stroke="#F8E0E6" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M25 15.5H27.8C29.8 15.5 31.5 17.2 31.5 19.2C31.5 21.2 29.8 22.9 27.8 22.9H25" stroke="#F8E0E6" stroke-width="2" stroke-linecap="round"/>
-                <path d="M7.5 13.5H25.5V20.5C25.5 25.5 21.5 29.5 16.5 29.5C11.5 29.5 7.5 25.5 7.5 20.5V13.5Z" fill="#F8E0E6"/>
-                <path d="M6 32H27" stroke="#F8E0E6" stroke-width="2" stroke-linecap="round"/>
-                <path d="M16.5 24.5C16.5 24.5 12.5 21.8 12.5 19.2C12.5 17.9 13.5 17 14.7 17C15.5 17 16.1 17.4 16.5 18.1C16.9 17.4 17.5 17 18.3 17C19.5 17 20.5 17.9 20.5 19.2C20.5 21.8 16.5 24.5 16.5 24.5Z" fill="#E89AAF"/>
+    <footer class="bg-[#3D2B1E] text-[#F8E0E6] pt-16 pb-12">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#F8E0E6]/12 items-center"
+        >
+          <div class="md:col-span-5 space-y-4">
+            <div class="flex items-center gap-3.5">
+              <div
+                class="w-10 h-10 rounded-full bg-[#6F4E37] border border-[#F8E0E6]/20 flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5"
+                  viewBox="0 0 36 36"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 9.5C13 7.8 14.5 7 14.5 5.2"
+                    stroke="#F8E0E6"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M18.5 9.5C18.5 7.8 20 7 20 5.2"
+                    stroke="#F8E0E6"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M25 15.5H27.8C29.8 15.5 31.5 17.2 31.5 19.2C31.5 21.2 29.8 22.9 27.8 22.9H25"
+                    stroke="#F8E0E6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M7.5 13.5H25.5V20.5C25.5 25.5 21.5 29.5 16.5 29.5C11.5 29.5 7.5 25.5 7.5 20.5V13.5Z"
+                    fill="#F8E0E6"
+                  />
+                  <path
+                    d="M6 32H27"
+                    stroke="#F8E0E6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M16.5 24.5C16.5 24.5 12.5 21.8 12.5 19.2C12.5 17.9 13.5 17 14.7 17C15.5 17 16.1 17.4 16.5 18.1C16.9 17.4 17.5 17 18.3 17C19.5 17 20.5 17.9 20.5 19.2C20.5 21.8 16.5 24.5 16.5 24.5Z"
+                    fill="#E89AAF"
+                  />
+                </svg>
+              </div>
+              <div>
+                <span class="font-bright text-2xl text-white block leading-none"
+                  >Le Petit Café</span
+                >
+                <span
+                  class="text-[10px] uppercase tracking-[0.2em] text-[#EDAEBF] mt-1 block"
+                  >Café • Brunch • Gourmandises</span
+                >
+              </div>
+            </div>
+            <p class="text-sm text-[#D2C8C1] max-w-sm leading-relaxed">
+              Un petit café, plein d’amour au Puy-en-Velay. Café de spécialité,
+              pâtisseries maison et brunch du week-end.
+            </p>
+          </div>
+
+          <div
+            class="md:col-span-4 flex flex-wrap gap-x-7 gap-y-3 text-xs uppercase tracking-[0.15em] font-medium"
+          >
+            <a href="#accueil" class="hover:text-[#EDAEBF] transition-colors"
+              >Accueil</a
+            >
+            <a href="#histoire" class="hover:text-[#EDAEBF] transition-colors"
+              >Notre histoire</a
+            >
+            <a href="#menu" class="hover:text-[#EDAEBF] transition-colors"
+              >Menu</a
+            >
+            <a href="#brunch" class="hover:text-[#EDAEBF] transition-colors"
+              >Brunch</a
+            >
+            <a href="#trouver" class="hover:text-[#EDAEBF] transition-colors"
+              >Nous trouver</a
+            >
+          </div>
+
+          <div class="md:col-span-3 flex items-center md:justify-end gap-4">
+            <div class="text-right">
+              <p class="font-bright italic text-sm text-[#EDAEBF]">
+                À très vite
+              </p>
+              <p class="text-xs text-[#D2C8C1]">@lepetitcafe</p>
+            </div>
+            <div class="w-16 h-16 shrink-0 text-[#F8E0E6]">
+              <svg
+                viewBox="0 0 100 100"
+                class="w-full h-full"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Sceau croissant Le Petit Café"
+              >
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="46"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  stroke-dasharray="3 2"
+                  opacity="0.6"
+                />
+                <path
+                  d="M24 58 C19 47, 29 30, 50 30 C71 30, 81 47, 76 58 C72 64, 64 64, 61 59 C57 65, 43 65, 39 59 C36 64, 28 64, 24 58 Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M38 33 Q35 46 39 59"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M62 33 Q65 46 61 59"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+                <circle cx="45.5" cy="46" r="1.5" fill="currentColor" />
+                <circle cx="54.5" cy="46" r="1.5" fill="currentColor" />
+                <path
+                  d="M46 51 Q50 54.5 54 51"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M73 48 Q83 40 81 31"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+                <circle
+                  cx="81"
+                  cy="30"
+                  r="2.5"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                />
+                <path
+                  d="M42 64 L40 76 H35"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M58 64 L60 76 H65"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
               </svg>
             </div>
-            <div>
-              <span class="font-bright text-2xl text-white block leading-none">Le Petit Café</span>
-              <span class="text-[10px] uppercase tracking-[0.2em] text-[#EDAEBF] mt-1 block">Café • Brunch • Gourmandises</span>
-            </div>
           </div>
-          <p class="text-sm text-[#D2C8C1] max-w-sm leading-relaxed">
-            Un petit café, plein d’amour au Puy-en-Velay. Café de spécialité, pâtisseries maison et brunch du week-end.
+        </div>
+
+        <div
+          class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#D2C8C1]/80"
+        >
+          <p class="font-medium text-[#F8E0E6]">
+            Café fictif — Projet de design
+          </p>
+          <p>© 2026 Le Petit Café — 12 rue des Rêves, Le Puy-en-Velay</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modales -->
+    <div
+      id="brunch-modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-[#212117]/65 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div
+        class="bg-[#FFF9F5] rounded-[28px] max-w-md w-full p-8 border border-[#6F4E37]/15 shadow-2xl relative"
+      >
+        <button
+          type="button"
+          id="close-brunch-modal"
+          aria-label="Fermer"
+          class="absolute top-6 right-6 w-9 h-9 rounded-full bg-[#F8E0E6] text-[#6F4E37] hover:bg-[#F4D0DA] text-sm font-semibold flex items-center justify-center transition-colors"
+        >
+          ✕
+        </button>
+
+        <div class="mb-6">
+          <p
+            class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#8C715F] mb-1"
+          >
+            Sam &amp; Dim • 9h – 15h
+          </p>
+          <h3
+            id="modal-title"
+            class="font-bright text-2xl sm:text-3xl text-[#6F4E37]"
+          >
+            Réserver ton Brunch
+          </h3>
+          <p class="text-xs sm:text-sm text-[#4F3727]/80 mt-1">
+            Installe-toi, on te réserve une table au calme.
           </p>
         </div>
 
-        <div class="md:col-span-4 flex flex-wrap gap-x-7 gap-y-3 text-xs uppercase tracking-[0.15em] font-medium">
-          <a href="#accueil" class="hover:text-[#EDAEBF] transition-colors">Accueil</a>
-          <a href="#histoire" class="hover:text-[#EDAEBF] transition-colors">Notre histoire</a>
-          <a href="#menu" class="hover:text-[#EDAEBF] transition-colors">Menu</a>
-          <a href="#brunch" class="hover:text-[#EDAEBF] transition-colors">Brunch</a>
-          <a href="#trouver" class="hover:text-[#EDAEBF] transition-colors">Nous trouver</a>
-        </div>
-
-        <div class="md:col-span-3 flex items-center md:justify-end gap-4">
-          <div class="text-right">
-            <p class="font-bright italic text-sm text-[#EDAEBF]">À très vite</p>
-            <p class="text-xs text-[#D2C8C1]">@lepetitcafe</p>
+        <form id="brunch-form" class="space-y-4">
+          <div>
+            <label
+              for="guest-name"
+              class="block text-[11px] uppercase tracking-[0.14em] font-semibold text-[#6F4E37] mb-1.5"
+              >Ton prénom</label
+            >
+            <input
+              type="text"
+              id="guest-name"
+              required
+              placeholder="Camille"
+              class="w-full px-4 py-3 rounded-xl bg-[#FDF5F7] border border-[#6F4E37]/15 text-[#212117] text-sm focus:outline-none focus:border-[#6F4E37]"
+            />
           </div>
-          <div class="w-16 h-16 shrink-0 text-[#F8E0E6]">
-            <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sceau croissant Le Petit Café">
-              <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="1" stroke-dasharray="3 2" opacity="0.6"/>
-              <path d="M24 58 C19 47, 29 30, 50 30 C71 30, 81 47, 76 58 C72 64, 64 64, 61 59 C57 65, 43 65, 39 59 C36 64, 28 64, 24 58 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-              <path d="M38 33 Q35 46 39 59" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-              <path d="M62 33 Q65 46 61 59" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-              <circle cx="45.5" cy="46" r="1.5" fill="currentColor"/>
-              <circle cx="54.5" cy="46" r="1.5" fill="currentColor"/>
-              <path d="M46 51 Q50 54.5 54 51" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-              <path d="M73 48 Q83 40 81 31" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-              <circle cx="81" cy="30" r="2.5" stroke="currentColor" stroke-width="1.3"/>
-              <path d="M42 64 L40 76 H35" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-              <path d="M58 64 L60 76 H65" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            </svg>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label
+                for="guest-day"
+                class="block text-[11px] uppercase tracking-[0.14em] font-semibold text-[#6F4E37] mb-1.5"
+                >Jour</label
+              >
+              <select
+                id="guest-day"
+                class="w-full px-4 py-3 rounded-xl bg-[#FDF5F7] border border-[#6F4E37]/15 text-[#212117] text-sm focus:outline-none focus:border-[#6F4E37]"
+              >
+                <option value="Samedi">Samedi</option>
+                <option value="Dimanche">Dimanche</option>
+              </select>
+            </div>
+            <div>
+              <label
+                for="guest-time"
+                class="block text-[11px] uppercase tracking-[0.14em] font-semibold text-[#6F4E37] mb-1.5"
+                >Créneau</label
+              >
+              <select
+                id="guest-time"
+                class="w-full px-4 py-3 rounded-xl bg-[#FDF5F7] border border-[#6F4E37]/15 text-[#212117] text-sm focus:outline-none focus:border-[#6F4E37]"
+              >
+                <option value="10h00">10h00</option>
+                <option value="11h30">11h30</option>
+                <option value="13h00">13h00</option>
+              </select>
+            </div>
           </div>
-        </div>
 
-      </div>
+          <div>
+            <label
+              for="guest-count"
+              class="block text-[11px] uppercase tracking-[0.14em] font-semibold text-[#6F4E37] mb-1.5"
+              >Convives</label
+            >
+            <select
+              id="guest-count"
+              class="w-full px-4 py-3 rounded-xl bg-[#FDF5F7] border border-[#6F4E37]/15 text-[#212117] text-sm focus:outline-none focus:border-[#6F4E37]"
+            >
+              <option value="2 personnes">2 personnes</option>
+              <option value="3 personnes">3 personnes</option>
+              <option value="4 personnes">4 personnes</option>
+              <option value="5+ personnes">5 personnes ou plus</option>
+            </select>
+          </div>
 
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#D2C8C1]/80">
-        <p class="font-medium text-[#F8E0E6]">Café fictif — Projet de design</p>
-        <p>© 2026 Le Petit Café — 12 rue des Rêves, Le Puy-en-Velay</p>
+          <button
+            type="submit"
+            class="mt-2 w-full py-3.5 rounded-full bg-[#6F4E37] hover:bg-[#4F3727] text-white text-xs uppercase tracking-[0.15em] font-semibold transition-colors"
+          >
+            Confirmer la réservation
+          </button>
+        </form>
       </div>
     </div>
-  </footer>
 
-  <!-- Modales -->
-  <div id="brunch-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-[#212117]/65 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="bg-[#FFF9F5] rounded-[28px] max-w-md w-full p-8 border border-[#6F4E37]/15 shadow-2xl relative">
-      <button type="button" id="close-brunch-modal" aria-label="Fermer" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-[#F8E0E6] text-[#6F4E37] hover:bg-[#F4D0DA] text-sm font-semibold flex items-center justify-center transition-colors">
-        ✕
-      </button>
-
-      <div class="mb-6">
-        <p class="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#8C715F] mb-1">Sam &amp; Dim • 9h – 15h</p>
-        <h3 id="modal-title" class="font-bright text-2xl sm:text-3xl text-[#6F4E37]">Réserver ton Brunch</h3>
-        <p class="text-xs sm:text-sm text-[#4F3727]/80 mt-1">Installe-toi, on te réserve une table au calme.</p>
-      </div>
-
-      <form id="brunch-form" class="space-y-4">
-        <div>
-          <label for="guest-name" class="block text-[11px] uppercase tracking-[0.14em] font-semibold text-[#6F4E37] mb-1.5">Ton prénom</label>
-          <input type="text" id="guest-name" required placeholder="Camille" class="w-full px-4 py-3 rounded-xl bg-[#FDF5F7] border border-[#6F4E37]/15 text-[#212117] text-sm focus:outline-none focus:border-[#6F4E37]" />
-        </div>
-
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label for="guest-day" class="block text-[11px] uppercase tracking-[0.14em] font-semibold text-[#6F4E37] mb-1.5">Jour</label>
-            <select id="guest-day" class="w-full px-4 py-3 rounded-xl bg-[#FDF5F7] border border-[#6F4E37]/15 text-[#212117] text-sm focus:outline-none focus:border-[#6F4E37]">
-              <option value="Samedi">Samedi</option>
-              <option value="Dimanche">Dimanche</option>
-            </select>
-          </div>
-          <div>
-            <label for="guest-time" class="block text-[11px] uppercase tracking-[0.14em] font-semibold text-[#6F4E37] mb-1.5">Créneau</label>
-            <select id="guest-time" class="w-full px-4 py-3 rounded-xl bg-[#FDF5F7] border border-[#6F4E37]/15 text-[#212117] text-sm focus:outline-none focus:border-[#6F4E37]">
-              <option value="10h00">10h00</option>
-              <option value="11h30">11h30</option>
-              <option value="13h00">13h00</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label for="guest-count" class="block text-[11px] uppercase tracking-[0.14em] font-semibold text-[#6F4E37] mb-1.5">Convives</label>
-          <select id="guest-count" class="w-full px-4 py-3 rounded-xl bg-[#FDF5F7] border border-[#6F4E37]/15 text-[#212117] text-sm focus:outline-none focus:border-[#6F4E37]">
-            <option value="2 personnes">2 personnes</option>
-            <option value="3 personnes">3 personnes</option>
-            <option value="4 personnes">4 personnes</option>
-            <option value="5+ personnes">5 personnes ou plus</option>
-          </select>
-        </div>
-
-        <button type="submit" class="mt-2 w-full py-3.5 rounded-full bg-[#6F4E37] hover:bg-[#4F3727] text-white text-xs uppercase tracking-[0.15em] font-semibold transition-colors">
-          Confirmer la réservation
+    <div
+      id="lightbox-modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-[#212117]/80 backdrop-blur-md"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="bg-[#FFF9F5] rounded-[28px] max-w-2xl w-full p-4 shadow-2xl relative"
+      >
+        <button
+          type="button"
+          id="close-lightbox"
+          aria-label="Fermer la photo"
+          class="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-[#FFF9F5]/90 backdrop-blur-md text-[#6F4E37] hover:bg-[#F8E0E6] text-sm font-semibold shadow flex items-center justify-center"
+        >
+          ✕
         </button>
-      </form>
+        <img
+          id="lightbox-img"
+          src=""
+          alt=""
+          class="w-full max-h-[72vh] object-cover rounded-[20px]"
+        />
+        <p
+          id="lightbox-caption"
+          class="mt-4 mb-2 text-center font-bright italic text-base text-[#6F4E37] px-4"
+        ></p>
+      </div>
     </div>
-  </div>
 
-  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-[#212117]/80 backdrop-blur-md" role="dialog" aria-modal="true">
-    <div class="bg-[#FFF9F5] rounded-[28px] max-w-2xl w-full p-4 shadow-2xl relative">
-      <button type="button" id="close-lightbox" aria-label="Fermer la photo" class="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-[#FFF9F5]/90 backdrop-blur-md text-[#6F4E37] hover:bg-[#F8E0E6] text-sm font-semibold shadow flex items-center justify-center">
-        ✕
-      </button>
-      <img id="lightbox-img" src="" alt="" class="w-full max-h-[72vh] object-cover rounded-[20px]" />
-      <p id="lightbox-caption" class="mt-4 mb-2 text-center font-bright italic text-base text-[#6F4E37] px-4"></p>
+    <div
+      id="toast-box"
+      class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none"
+    >
+      <div
+        class="bg-[#3D2B1E] text-[#FDF5F7] px-6 py-4 rounded-2xl shadow-xl border border-[#EDAEBF]/30 flex items-center gap-3 max-w-sm"
+      >
+        <span class="w-2 h-2 rounded-full bg-[#EDAEBF] shrink-0"></span>
+        <p id="toast-message" class="text-xs sm:text-sm font-medium"></p>
+      </div>
     </div>
-  </div>
 
-  <div id="toast-box" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
-    <div class="bg-[#3D2B1E] text-[#FDF5F7] px-6 py-4 rounded-2xl shadow-xl border border-[#EDAEBF]/30 flex items-center gap-3 max-w-sm">
-      <span class="w-2 h-2 rounded-full bg-[#EDAEBF] shrink-0"></span>
-      <p id="toast-message" class="text-xs sm:text-sm font-medium"></p>
-    </div>
-  </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const mobileLinks = document.querySelectorAll('.mobile-link');
-
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-        });
-      });
-
-      const reveals = document.querySelectorAll('.reveal');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      reveals.forEach(el => observer.observe(el));
-
-      const menuTabs = document.querySelectorAll('.menu-tab');
-      const menuCategories = document.querySelectorAll('.menu-category');
-
-      function filterMenu(category) {
-        menuTabs.forEach(tab => {
-          if (tab.dataset.tab === category) {
-            tab.classList.remove('bg-[#FDF5F7]', 'text-[#6F4E37]');
-            tab.classList.add('bg-[#6F4E37]', 'text-white');
-          } else {
-            tab.classList.remove('bg-[#6F4E37]', 'text-white');
-            tab.classList.add('bg-[#FDF5F7]', 'text-[#6F4E37]');
-          }
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
         });
 
-        menuCategories.forEach(cat => {
-          if (category === 'all' || cat.dataset.category === category) {
-            cat.classList.remove('hidden');
-          } else {
-            cat.classList.add('hidden');
-          }
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+          });
         });
-      }
 
-      menuTabs.forEach(tab => {
-        tab.addEventListener('click', () => filterMenu(tab.dataset.tab));
-      });
+        const reveals = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
 
-      const toastBox = document.getElementById('toast-box');
-      const toastMessage = document.getElementById('toast-message');
-      let toastTimer;
+        reveals.forEach((el) => observer.observe(el));
 
-      function showToast(msg) {
-        toastMessage.textContent = msg;
-        toastBox.classList.remove('translate-y-24', 'opacity-0');
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => {
-          toastBox.classList.add('translate-y-24', 'opacity-0');
-        }, 4000);
-      }
+        const menuTabs = document.querySelectorAll(".menu-tab");
+        const menuCategories = document.querySelectorAll(".menu-category");
 
-      const brunchModal = document.getElementById('brunch-modal');
-      const openModalBtns = [
-        document.getElementById('open-brunch-modal'),
-        document.getElementById('open-brunch-modal-2')
-      ];
-      const closeModalBtn = document.getElementById('close-brunch-modal');
-      const brunchForm = document.getElementById('brunch-form');
+        function filterMenu(category) {
+          menuTabs.forEach((tab) => {
+            if (tab.dataset.tab === category) {
+              tab.classList.remove("bg-[#FDF5F7]", "text-[#6F4E37]");
+              tab.classList.add("bg-[#6F4E37]", "text-white");
+            } else {
+              tab.classList.remove("bg-[#6F4E37]", "text-white");
+              tab.classList.add("bg-[#FDF5F7]", "text-[#6F4E37]");
+            }
+          });
 
-      openModalBtns.forEach(btn => {
-        if (btn) {
-          btn.addEventListener('click', () => {
-            brunchModal.classList.remove('hidden');
-            brunchModal.classList.add('flex');
+          menuCategories.forEach((cat) => {
+            if (category === "all" || cat.dataset.category === category) {
+              cat.classList.remove("hidden");
+            } else {
+              cat.classList.add("hidden");
+            }
           });
         }
-      });
 
-      function closeBrunchModal() {
-        brunchModal.classList.add('hidden');
-        brunchModal.classList.remove('flex');
-      }
+        menuTabs.forEach((tab) => {
+          tab.addEventListener("click", () => filterMenu(tab.dataset.tab));
+        });
 
-      closeModalBtn.addEventListener('click', closeBrunchModal);
-      brunchModal.addEventListener('click', (e) => {
-        if (e.target === brunchModal) closeBrunchModal();
-      });
+        const toastBox = document.getElementById("toast-box");
+        const toastMessage = document.getElementById("toast-message");
+        let toastTimer;
 
-      brunchForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('guest-name').value.trim();
-        const day = document.getElementById('guest-day').value;
-        const time = document.getElementById('guest-time').value;
-        const count = document.getElementById('guest-count').value;
-
-        closeBrunchModal();
-        brunchForm.reset();
-        showToast(`Merci ${name}, ta table (${count}) est réservée ${day} à ${time}.`);
-      });
-
-      const copyAddressBtn = document.getElementById('copy-address-btn');
-      copyAddressBtn.addEventListener('click', () => {
-        const textArea = document.createElement('textarea');
-        textArea.value = 'Le Petit Café — 12 rue des Rêves, 43000 Le Puy-en-Velay';
-        document.body.appendChild(textArea);
-        textArea.select();
-        try {
-          document.execCommand('copy');
-          showToast('Adresse copiée : 12 rue des Rêves, Le Puy-en-Velay.');
-        } catch (err) {
-          showToast('12 rue des Rêves, Le Puy-en-Velay');
+        function showToast(msg) {
+          toastMessage.textContent = msg;
+          toastBox.classList.remove("translate-y-24", "opacity-0");
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => {
+            toastBox.classList.add("translate-y-24", "opacity-0");
+          }, 4000);
         }
-        document.body.removeChild(textArea);
-      });
 
-      const galleryItems = document.querySelectorAll('.gallery-item');
-      const lightboxModal = document.getElementById('lightbox-modal');
-      const lightboxImg = document.getElementById('lightbox-img');
-      const lightboxCaption = document.getElementById('lightbox-caption');
-      const closeLightbox = document.getElementById('close-lightbox');
+        const brunchModal = document.getElementById("brunch-modal");
+        const openModalBtns = [
+          document.getElementById("open-brunch-modal"),
+          document.getElementById("open-brunch-modal-2"),
+        ];
+        const closeModalBtn = document.getElementById("close-brunch-modal");
+        const brunchForm = document.getElementById("brunch-form");
 
-      galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-          const img = item.querySelector('img');
-          lightboxImg.src = img.src;
-          lightboxImg.alt = img.alt;
-          lightboxCaption.textContent = item.dataset.caption;
-          lightboxModal.classList.remove('hidden');
-          lightboxModal.classList.add('flex');
+        openModalBtns.forEach((btn) => {
+          if (btn) {
+            btn.addEventListener("click", () => {
+              brunchModal.classList.remove("hidden");
+              brunchModal.classList.add("flex");
+            });
+          }
+        });
+
+        function closeBrunchModal() {
+          brunchModal.classList.add("hidden");
+          brunchModal.classList.remove("flex");
+        }
+
+        closeModalBtn.addEventListener("click", closeBrunchModal);
+        brunchModal.addEventListener("click", (e) => {
+          if (e.target === brunchModal) closeBrunchModal();
+        });
+
+        brunchForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const name = document.getElementById("guest-name").value.trim();
+          const day = document.getElementById("guest-day").value;
+          const time = document.getElementById("guest-time").value;
+          const count = document.getElementById("guest-count").value;
+
+          closeBrunchModal();
+          brunchForm.reset();
+          showToast(
+            `Merci ${name}, ta table (${count}) est réservée ${day} à ${time}.`,
+          );
+        });
+
+        const copyAddressBtn = document.getElementById("copy-address-btn");
+        copyAddressBtn.addEventListener("click", () => {
+          const textArea = document.createElement("textarea");
+          textArea.value =
+            "Le Petit Café — 12 rue des Rêves, 43000 Le Puy-en-Velay";
+          document.body.appendChild(textArea);
+          textArea.select();
+          try {
+            document.execCommand("copy");
+            showToast("Adresse copiée : 12 rue des Rêves, Le Puy-en-Velay.");
+          } catch (err) {
+            showToast("12 rue des Rêves, Le Puy-en-Velay");
+          }
+          document.body.removeChild(textArea);
+        });
+
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        const lightboxModal = document.getElementById("lightbox-modal");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxCaption = document.getElementById("lightbox-caption");
+        const closeLightbox = document.getElementById("close-lightbox");
+
+        galleryItems.forEach((item) => {
+          item.addEventListener("click", () => {
+            const img = item.querySelector("img");
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.textContent = item.dataset.caption;
+            lightboxModal.classList.remove("hidden");
+            lightboxModal.classList.add("flex");
+          });
+        });
+
+        function hideLightbox() {
+          lightboxModal.classList.add("hidden");
+          lightboxModal.classList.remove("flex");
+        }
+
+        closeLightbox.addEventListener("click", hideLightbox);
+        lightboxModal.addEventListener("click", (e) => {
+          if (e.target === lightboxModal) hideLightbox();
         });
       });
-
-      function hideLightbox() {
-        lightboxModal.classList.add('hidden');
-        lightboxModal.classList.remove('flex');
-      }
-
-      closeLightbox.addEventListener('click', hideLightbox);
-      lightboxModal.addEventListener('click', (e) => {
-        if (e.target === lightboxModal) hideLightbox();
-      });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
