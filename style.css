@@ -1,5 +1,7 @@
 /* ============================================================
    LE PETIT CAFÉ — CSS COMPLET
+   Style rétro rose poudré + marron
+   Gros titres : Bright Regular | Texte : Inter, sobre
    ============================================================ */
 
 /* --- FONTS --- */
@@ -198,3 +200,5 @@ h2, .titre-services { font-size: clamp(48px, 7vw, 96px); color: var(--marron); }
   .btn { width: 100%; }
   .header .btn { display: none; }
 }
+
+.bandeau{display:flex}.bandeau span{animation:marquee 18s linear infinite}@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
