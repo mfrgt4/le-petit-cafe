@@ -350,23 +350,20 @@
 
         <!-- 3. BANDEAU MARQUEE ÉDITORIAL -->
         <div
-          class="bg-[#FDF5F7] text-[#8C715F] py-3.5 overflow-hidden border-y border-[#F4D0DA]"
+          class="bg-[#8C715F] text-[#FDF5F7] py-3.5 overflow-hidden border-y border-[#F4D0DA]/30"
         >
           <div
-            class="animate-marquee flex items-center gap-10 text-xs font-normal tracking-[0.24em] uppercase"
+            id="marquee"
+            class="animate-marquee text-xs font-normal tracking-[0.24em] uppercase"
           >
-            <span>Espresso</span><span class="text-[#EDAEBF]">•</span>
-            <span>Croissant</span><span class="text-[#EDAEBF]">•</span>
-            <span>Cinnamon Roll</span><span class="text-[#EDAEBF]">•</span>
-            <span>Iced Latte</span><span class="text-[#EDAEBF]">•</span>
-            <span>Matcha</span><span class="text-[#EDAEBF]">•</span>
-            <span>Brunch</span><span class="text-[#EDAEBF]">•</span>
-            <span>Espresso</span><span class="text-[#EDAEBF]">•</span>
-            <span>Croissant</span><span class="text-[#EDAEBF]">•</span>
-            <span>Cinnamon Roll</span><span class="text-[#EDAEBF]">•</span>
-            <span>Iced Latte</span><span class="text-[#EDAEBF]">•</span>
-            <span>Matcha</span><span class="text-[#EDAEBF]">•</span>
-            <span>Brunch</span><span class="text-[#EDAEBF]">•</span>
+            <div class="flex shrink-0 items-center gap-10 pr-10">
+              <span>Espresso</span><span class="text-[#EDAEBF]">•</span>
+              <span>Croissant</span><span class="text-[#EDAEBF]">•</span>
+              <span>Cinnamon Roll</span><span class="text-[#EDAEBF]">•</span>
+              <span>Iced Latte</span><span class="text-[#EDAEBF]">•</span>
+              <span>Matcha</span><span class="text-[#EDAEBF]">•</span>
+              <span>Brunch</span><span class="text-[#EDAEBF]">•</span>
+            </div>
           </div>
         </div>
 
@@ -1739,6 +1736,21 @@
     </div>
 
     <script>
+      // Marquee : répète les mots jusqu'à dépasser la largeur de l'écran,
+      // puis duplique le groupe pour une boucle sans trou.
+      (function () {
+        const track = document.getElementById("marquee");
+        if (!track) return;
+        const group = track.firstElementChild;
+        const base = group.innerHTML;
+        while (group.scrollWidth < window.screen.width) {
+          group.insertAdjacentHTML("beforeend", base);
+        }
+        const clone = group.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        track.appendChild(clone);
+      })();
+
       const header = document.querySelector("header");
       const hero = document.querySelector("#accueil section");
 
