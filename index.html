@@ -1019,37 +1019,367 @@
         </div>
       </section>
 
-        <!-- =====================================================================
-            6. MENU COMPLET (Image du menu)
-        ====================================================================== -->
-        <section id="menu" class="relative bg-[#EDAEBF]">
-          <div class="w-full overflow-hidden leading-none bg-[#EDAEBF]">
-            <svg
-              viewBox="0 0 1440 72"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-full h-10 sm:h-16 block"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M0 0H1440V26C1180 74 920 6 720 38C520 70 260 10 0 48V0Z"
-                fill="#F1EDEB"
-              />
-            </svg>
-          </div>
+      <!-- =====================================================================
+         6. MENU COMPLET (4 colonnes avec prix exacts)
+    ====================================================================== -->
+      <section id="menu" class="relative bg-[#EDAEBF]">
+        <div class="w-full overflow-hidden leading-none bg-[#EDAEBF]">
+          <svg
+            viewBox="0 0 1440 72"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-full h-10 sm:h-16 block"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0 0H1440V26C1180 74 920 6 720 38C520 70 260 10 0 48V0Z"
+              fill="#F1EDEB"
+            />
+          </svg>
+        </div>
 
-          <div class="max-w-5xl mx-auto px-5 sm:px-8 lg:px-10 py-16 sm:py-24">
-            <div class="reveal">
-              <div class="relative bg-[#8C715F] p-3.5 sm:p-5 rounded- shadow-editorial">
-                <img
-                  src="images/menu.jpg"
-                  alt="Menu Le Petit Café"
-                  class="w-full h-auto rounded- block"
-                />
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16 sm:py-24">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start"
+          >
+            <div class="lg:col-span-7 reveal">
+              <div
+                class="relative bg-[#8C715F] p-3.5 sm:p-5 rounded-[30px] shadow-editorial"
+              >
+                <div
+                  class="w-24 h-4 mx-auto -mt-5 mb-2.5 rounded-t-xl bg-[#4F3727] flex items-center justify-center"
+                >
+                  <div class="w-2 h-2 rounded-full bg-[#FFF9F5]"></div>
+                </div>
+
+                <div
+                  class="bg-[#FDF5F7] rounded-[22px] p-7 sm:p-11 border border-[#6F4E37]/15"
+                >
+                  <div
+                    class="text-center border-b border-[#6F4E37]/15 pb-6 mb-8"
+                  >
+                    <p
+                      class="text-[10px] uppercase tracking-[0.28em] text-[#8C715F] font-semibold mb-1.5"
+                    >
+                      Le Petit Café • Le Puy-en-Velay
+                    </p>
+                    <h3
+                      class="font-bright text-4xl sm:text-5xl text-[#212117] tracking-tight"
+                    >
+                      MENU
+                    </h3>
+                    <p class="text-xs text-[#6F4E37]/80 mt-2">
+                      Lait d’avoine ou d’amande disponible sur demande
+                    </p>
+                  </div>
+
+                  <div
+                    id="menu-grid"
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-9"
+                  >
+                    <div class="menu-category" data-category="Cafés">
+                      <h4
+                        class="font-bright text-xl text-[#6F4E37] mb-4 pb-1.5 border-b border-[#F4D0DA]"
+                      >
+                        Cafés
+                      </h4>
+                      <ul class="space-y-2.5 text-sm">
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Espresso</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >1,50€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]">Allongé</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >1,80€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Noisette</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >1,80€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Café crème</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >2,20€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Cappuccino</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,00€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Latte macchiato</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,50€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Chocolat chaud</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,00€</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="menu-category" data-category="Douceurs">
+                      <h4
+                        class="font-bright text-xl text-[#6F4E37] mb-4 pb-1.5 border-b border-[#F4D0DA]"
+                      >
+                        Douceurs
+                      </h4>
+                      <ul class="space-y-2.5 text-sm">
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Croissant</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >1,50€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Pain au chocolat</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >1,80€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]">Cookie</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >2,00€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Tarte maison</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,50€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]">Cake</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,00€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Cinnamon Roll</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,50€</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="menu-category" data-category="Boissons">
+                      <h4
+                        class="font-bright text-xl text-[#6F4E37] mb-4 pb-1.5 border-b border-[#F4D0DA]"
+                      >
+                        Boissons
+                      </h4>
+                      <ul class="space-y-2.5 text-sm">
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Iced latte</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,80€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Iced matcha</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,80€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Chai tea latte</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,80€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Thé glacé</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,00€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Smoothie</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,95€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Jus d’orange</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >3,95€</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="menu-category" data-category="Thés">
+                      <h4
+                        class="font-bright text-xl text-[#6F4E37] mb-4 pb-1.5 border-b border-[#F4D0DA]"
+                      >
+                        Thés
+                      </h4>
+                      <ul class="space-y-2.5 text-sm">
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Thé noir</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >2,50€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Thé vert</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >2,50€</span
+                          >
+                        </li>
+                        <li class="flex items-baseline">
+                          <span class="font-medium text-[#212117]"
+                            >Thé aux fruits</span
+                          ><span class="menu-dots"></span
+                          ><span class="font-semibold text-[#6F4E37]"
+                            >2,50€</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div
+                    class="mt-9 pt-5 border-t border-[#6F4E37]/15 flex items-center justify-between gap-4"
+                  >
+                    <div class="text-[11px] text-[#6F4E37] space-y-0.5">
+                      <p class="font-semibold">
+                        12 rue des Rêves, Le Puy-en-Velay
+                      </p>
+                      <p class="text-[#8C715F]">
+                        06 38 23 15 90 • @lepetitcafe
+                      </p>
+                    </div>
+
+                    <div
+                      class="w-16 h-16 shrink-0 opacity-85"
+                      title="Mascotte Le Petit Café"
+                    >
+                      <svg
+                        viewBox="0 0 100 100"
+                        class="w-full h-full"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Sceau gravure croissant rétro"
+                      >
+                        <circle
+                          cx="50"
+                          cy="50"
+                          r="46"
+                          stroke="#212117"
+                          stroke-width="1"
+                          stroke-dasharray="3 2"
+                        />
+                        <path
+                          d="M24 58 C19 47, 29 30, 50 30 C71 30, 81 47, 76 58 C72 64, 64 64, 61 59 C57 65, 43 65, 39 59 C36 64, 28 64, 24 58 Z"
+                          stroke="#212117"
+                          stroke-width="1.6"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M38 33 Q35 46 39 59"
+                          stroke="#212117"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M62 33 Q65 46 61 59"
+                          stroke="#212117"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                        />
+                        <circle cx="45.5" cy="46" r="1.5" fill="#212117" />
+                        <circle cx="54.5" cy="46" r="1.5" fill="#212117" />
+                        <path
+                          d="M46 51 Q50 54.5 54 51"
+                          stroke="#212117"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M73 48 Q83 40 81 31"
+                          stroke="#212117"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                        />
+                        <circle
+                          cx="81"
+                          cy="30"
+                          r="2.5"
+                          stroke="#212117"
+                          stroke-width="1.3"
+                        />
+                        <path
+                          d="M42 64 L40 76 H35"
+                          stroke="#212117"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M58 64 L60 76 H65"
+                          stroke="#212117"
+                          stroke-width="1.4"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
 
             <div
               id="brunch"
